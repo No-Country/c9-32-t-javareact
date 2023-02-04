@@ -52,6 +52,13 @@ Una plataforma de servicio de limpieza es una solución digital que permite a lo
 | **Luis Rayo**  | **Kevin Rodriguez**  | **Carlos Gómez**  | **Rodmel Calderón**  | 
 | <a href="https://github.com/lrayo"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/antonio-ayola"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/KuroMicho"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/RiascosDev/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/RogCode"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/valbuena99/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/rod12151"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/Julian-riedinger/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
+### Diseño UI/UX
+
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U048WKDDM5G-d79defa7a4a1-512" width=50>| <img src="https://ca.slack-edge.com/T02KS88FB0E-U042BLNSB3Q-483b8fe26cd8-512" width=50>  |  
+:-:|:-:|
+| **Andrés Cajas**  | **Juan Gyldenfeldt** | 
+| <a href="https://github.com/afcv10"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/antonio-ayola"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/GyldenfeldtJuan"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/GyldenfeldtJuan/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
 ## Communication 💬
 
 [![](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)](https://discord.gg/pBhr4GMR) 
