@@ -4,3 +4,6 @@ dist
 dist-ssr
 *.local
 node_modules/*
+vite.config.ts
+tailwind.config.cjs
+postcss.config.cjs
