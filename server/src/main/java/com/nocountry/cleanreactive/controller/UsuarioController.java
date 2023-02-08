@@ -2,8 +2,6 @@ package com.nocountry.cleanreactive.controller;
 
 import java.util.List;
 
-import com.nocountry.cleanreactive.model.User;
-import com.nocountry.cleanreactive.service.UserService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,38 +11,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nocountry.cleanreactive.model.Usuario;
+import com.nocountry.cleanreactive.service.UsuarioService;
 
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class UserController {
+public class UsuarioController {
 
-	private final UserService userService;
+	private final UsuarioService usuarioService;
 	
 	@PostMapping("/usuarios")
-	public void save(@RequestBody User user) {
-		userService.save(user);
+	public void save(@RequestBody Usuario usuario) {
+		usuarioService.save(usuario);
 	}
 	
 	@GetMapping("/usuarios")
-	public List<User> findAll() {
-		return userService.findAll();
+	public List<Usuario> findAll() {
+		return usuarioService.findAll();
 	}
 	
 	@GetMapping("/usuario/{id}")
-	public User findById(@PathVariable String id) {
-		return userService.findById(id).get();
+	public Usuario findById(@PathVariable String id) {
+		return usuarioService.findById(id).get();
 	}
 	
 	@DeleteMapping("/usuario/{id}")
 	public void deleteById(@PathVariable String id) {
-		userService.deleteById(id);
+		usuarioService.deleteById(id);
 	}
 	
 	@PutMapping("/usuarios")
-	public void update(@RequestBody User user) {
-		userService.save(user);
+	public void update(@RequestBody Usuario usuario) {
+		usuarioService.save(usuario);
 	}
 }

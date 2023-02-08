@@ -5,17 +5,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
-@Document
+@Document(value = "usuario")
 @Data
-public class User {
+public class Usuario {
 	@Id
 	private String id;
+	private String usuario;
 	private String password;
-	private String Name;
+	private String nombre;
+	private String apellido;
 	private String email;
-	private String address;
-	private Integer phonenumber;
-
+	private String direccion;
+	private Integer telefono;
+	private Boolean activo;
 	
 
 }
