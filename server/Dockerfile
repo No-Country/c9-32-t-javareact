@@ -1,5 +1,4 @@
 FROM eclipse-temurin:17-jdk-alpine
-WORKDIR /server
-COPY target/cleanreactive.jar server/cleanreactive.jar
+COPY target/cleanreactive.jar cleanreactive.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/server/cleanreactive.jar"]
+ENTRYPOINT ["java","-jar","/cleanreactive.jar"]
