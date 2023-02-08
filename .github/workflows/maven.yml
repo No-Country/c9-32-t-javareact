@@ -32,6 +32,14 @@ jobs:
       - name: Build with Maven
         run: cd server && mvn clean install -D SPRING_PROFILE=prod
 
+      - name: Install Railway
+        run: npm i -g @railway/cli
+
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -48,7 +56,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: $GITHUB_WORKSPACE/server
+          context: ./server
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
