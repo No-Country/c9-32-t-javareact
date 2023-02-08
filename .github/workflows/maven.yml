@@ -48,8 +48,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          file: /server/Dockerfile
-          context: ./server
+          context: ../../server
+          file: Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
