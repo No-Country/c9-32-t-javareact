@@ -4,11 +4,17 @@
 
 @layer base {
 	/* css/Sass    */
-  
+  li {
+    list-style-type: none;
+  }
 }
 
 @layer components {
 	/* Tailwind */
+
+	.text {
+    @apply text-gray-300 font-[300] leading-[27px];
+  }
 
 	.nav-list_container {
 		@apply p-0  bg-slate-100 relative flex w-full h-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:w-full lg:justify-between;
@@ -27,4 +33,17 @@
 	}
 
 	/* HEADER */
+
+
+	.menu-item {
+    @apply hover:text-orange-300 active:text-orange-300 hover:cursor-pointer md:font-[700];
+  }
+
+	.footer {
+    @apply bg-black/70  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
+  }
+
+  .footer__nav-items {
+    @apply flex flex-col items-center gap-5 font-bold text-white uppercase text-sm tracking-[2px] sm:flex-row md:gap-10 lg:gap-24 lg:text-base;
+  }
 }

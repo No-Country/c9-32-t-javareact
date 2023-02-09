@@ -1,4 +1,4 @@
-function Footer() {
+const Footer = () => {
 	const navItems = ['Servicios', 'Empresas', 'Lorem', 'Ipsum'];
 
 	return (
@@ -59,6 +59,6 @@ function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;
