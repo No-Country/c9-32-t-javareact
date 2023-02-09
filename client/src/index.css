@@ -2,21 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base{
-
-
-  /* css/Sass    */
-
-
-
+@layer base {
+	/* css/Sass    */
+  
 }
 
 @layer components {
-   
+	/* Tailwind */
 
-  /* Tailwind */
+	.nav-list_container {
+		@apply p-0  bg-slate-100 relative flex w-full h-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:w-full lg:justify-between;
+	}
 
+	.nav-list {
+		@apply w-full bg-slate-100 h-screen flex flex-col justify-center items-center gap-20  text-[16px]  uppercase  lg:flex-row lg:h-auto lg:justify-center;
+	}
 
-  
+	.nav_link-item {
+		@apply block hover:scale-90 font-sans    transition-all  delay-100  duration-200 tracking-[1px];
+	}
+
+	.toggleButton {
+		@apply z-[101] absolute outline-none border-none select-none top-5 right-5 lg:hidden;
+	}
+
+	/* HEADER */
 }
