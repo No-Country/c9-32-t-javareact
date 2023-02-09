@@ -8,6 +8,10 @@
 
   /* css/Sass    */
 
+  li {
+    list-style-type: none;
+  } 
+
 
 
 }
@@ -16,6 +20,23 @@
    
 
   /* Tailwind */
+  .menu-item {
+    @apply hover:text-orange-300 active:text-orange-300 hover:cursor-pointer md:font-[700];
+  }
+
+  .text {
+    @apply text-gray-200 font-[300] leading-[27px];
+  }
+
+  /* Footer */
+  .footer {
+    @apply bg-black/70  mt-10 flex flex-col  items-center gap-10 p-5  md:mx-auto md:pb-10;
+  }
+
+  .footer__nav-items {
+    @apply flex flex-col items-center gap-5 font-bold text-white uppercase text-sm tracking-[2px] sm:flex-row md:gap-10 lg:gap-24 lg:text-base;
+  }
+
 
 
   
