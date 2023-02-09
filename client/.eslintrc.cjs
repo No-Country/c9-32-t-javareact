@@ -40,5 +40,6 @@ module.exports = {
 		// Turned off because conflicts with the ones above and does not support aliases
 		'node/no-missing-require': 'off',
 		'node/no-extraneous-import': 'off',
+
 	},
 };

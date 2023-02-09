@@ -1,3 +1,1 @@
-export const index = () => {
-	return <div>index</div>;
-};
+export const index = () => <div>index</div>;
