@@ -1,11 +1,15 @@
 import { Footer, Nav } from './components/layout';
+import Home from './pages/Home';
 
 function App() {
 	return (
-		<div className="App">
+		<>
 			<Nav />
+			<main className="flex-auto max-w-7xl mx-auto">
+				<Home />
+			</main>
 			<Footer />
-		</div>
+		</>
 	);
 }
 
