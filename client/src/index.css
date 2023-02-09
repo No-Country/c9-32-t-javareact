@@ -4,51 +4,67 @@
 
 @layer base {
 	/* css/Sass    */
-  li {
-    list-style-type: none;
-  }
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+	li {
+		list-style-type: none;
+	}
+	#root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
 }
 
 @layer components {
 	/* Tailwind */
 
+
+
+	/* SHARED STYLES */
 	.text {
-    @apply text-gray-300 font-[300] leading-[27px];
+		@apply text-gray-300 font-[300] leading-[27px];
+	}
+
+
+
+
+
+	/* HEADER */
+
+
+	nav {
+    @apply fixed top-0 left-0 bottom-0 w-full z-[100]  lg:relative ;
   }
 
 	.nav-list_container {
-		@apply p-0  bg-slate-100 relative flex w-full h-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:w-full lg:justify-between;
+		@apply p-0  bg-customViolet text-white  relative flex w-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:h-[56px] lg:w-full lg:justify-between;
 	}
 
 	.nav-list {
-		@apply w-full bg-slate-100 h-screen flex flex-col justify-center items-center gap-20  text-[16px]  uppercase  lg:flex-row lg:h-auto lg:justify-center;
+		@apply  w-full  h-screen flex flex-col justify-center items-center gap-20  text-[16px]  uppercase  lg:flex-row lg:h-auto lg:justify-center;
 	}
 
 	.nav_link-item {
-		@apply block hover:scale-90 font-sans    transition-all  delay-100  duration-200 tracking-[1px];
+		@apply block hover:scale-90 font-sans transition-all  delay-100  duration-200 tracking-[1px];
 	}
 
 	.toggleButton {
 		@apply z-[101] absolute outline-none border-none select-none top-5 right-5 lg:hidden;
 	}
 
-	/* HEADER */
-
 
 	.menu-item {
-    @apply hover:text-orange-300 active:text-orange-300 hover:cursor-pointer md:font-[700];
-  }
+		@apply hover:text-orange-300 active:text-orange-300 hover:cursor-pointer md:font-[700];
+	}
+
+
+
+	/* FOOTER */
 
 	.footer {
-    @apply bg-black/70  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
-  }
+		@apply bg-customViolet  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
+	}
 
-  .footer__nav-items {
-    @apply flex flex-col items-center gap-5 font-bold text-white uppercase text-sm tracking-[2px] sm:flex-row md:gap-10 lg:gap-24 lg:text-base;
-  }
+	.footer__nav-items {
+		@apply flex flex-col  items-center gap-5 font-bold text-white uppercase text-sm tracking-[2px] sm:flex-row md:gap-10 lg:gap-24 lg:text-base;
+	}
 }
