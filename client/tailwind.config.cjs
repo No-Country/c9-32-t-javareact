@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       colors:{
         customViolet: '#2463EB'
+      },
+      fontFamily:{
+          roboto: "'Roboto', sans-serif"
       }
     },
   },
