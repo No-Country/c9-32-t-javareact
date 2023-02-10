@@ -61,7 +61,7 @@
 	/* FOOTER */
 
 	.footer {
-		@apply bg-customViolet  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
+		@apply bg-customViolet w-full  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
 	}
 
 	.footer__nav-items {
