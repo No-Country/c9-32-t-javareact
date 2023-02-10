@@ -1,8 +1,7 @@
-import React from 'react';
-import { Services } from './components';
-import Hero from './components/Hero';
+import { ReactElement } from 'react';
+import { Services, Hero } from './components';
 
-function HomePage() {
+function HomePage(): ReactElement {
 	return (
 		<main className="flex-auto max-w-7xl mx-auto">
 			<Hero />
