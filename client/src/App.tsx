@@ -6,11 +6,9 @@ import NotFound from './pages/NotFound';
 function App() {
 	return (
 		<>
-
-
-		{/* Si consideran que esto se puede hacer de otra manera, cambien a su gusto sin problema, es solo la estructura inicial para ir dejando algo */}
+			{/* Si consideran que esto se puede hacer de otra manera, cambien a su gusto sin problema, es solo la estructura inicial para ir dejando algo */}
 			<BrowserRouter>
-			
+				{/* Nav & Footer en un principio quedan afuera porque son componentes que se comparten en la mayoria en las pages. */}
 				<Nav />
 				<Routes>
 					<Route path="/" element={<Home />} />
