@@ -7,10 +7,12 @@
 	li {
 		list-style-type: none;
 	}
+	
 	#root {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+
 	}
 }
 
@@ -24,7 +26,10 @@
 		@apply text-gray-300 font-[300] leading-[27px];
 	}
 
-
+	
+	#root{
+		@apply font-roboto
+	}
 
 
 
@@ -32,11 +37,11 @@
 
 
 	nav {
-    @apply fixed top-0 left-0 bottom-0 w-full z-[100]  lg:relative ;
+    @apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  lg:relative  ;
   }
 
 	.nav-list_container {
-		@apply p-0  bg-customViolet text-white  relative flex w-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:h-[56px] lg:w-full lg:justify-between;
+		@apply p-0  bg-customViolet text-white  relative flex h-full w-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:h-[56px] lg:w-full lg:justify-between ;
 	}
 
 	.nav-list {

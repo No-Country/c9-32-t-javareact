@@ -7,6 +7,7 @@ import { useMediaQuery } from '../../../hooks/useMediaQuery';
 const Nav = () => {
 	const [showNav, setShowNav] = useState<boolean>(false);
 
+
 	const navItems = ['lorem', 'lorem', 'lorem', 'lorem'];
 
 	const isSmall = useMediaQuery('(min-width: 1024px)');
@@ -33,7 +34,7 @@ const Nav = () => {
 		},
 	};
 	return (
-		<div className="relative w-limited   ">
+		<div className="relative w-limited    ">
 			<motion.nav
 				animate={showNav ? 'open' : 'closed'}
 				variants={variants || undefined}
