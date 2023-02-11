@@ -1,7 +1,9 @@
-import LandingLayout from '../components/layout/LandingLayout';
-import Home from '../pages/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NotFound from '../pages/NotFound';
+
+import LandingLayout from '@components/layout/LandingLayout';
+
+import Home from '@pages/Home';
+import NotFound from '@/pages/NotFound';
 
 function Router() {
 	return (

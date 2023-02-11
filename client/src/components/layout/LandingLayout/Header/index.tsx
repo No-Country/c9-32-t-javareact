@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Close } from '../../../icons/Close';
-import Bars from '../../../icons/Bars';
-import { useMediaQuery } from '../../../../hooks/useMediaQuery';
+import { Close } from '@components/icons/Close';
+import Bars from '@components/icons/Bars';
+import { useMediaQuery } from '@hooks/useMediaQuery';
 
 const Nav = () => {
 	const [showNav, setShowNav] = useState<boolean>(false);
 
-
 	const navItems = ['lorem', 'lorem', 'lorem', 'lorem'];
 
 	const isSmall = useMediaQuery('(min-width: 1024px)');
-
 
 	useEffect(() => {
 		showNav
@@ -19,8 +17,6 @@ const Nav = () => {
 			: (document.body.style.overflow = 'scroll');
 	}, [showNav]);
 
-
-	
 	const variants = !isSmall && {
 		open: { opeacity: 0, x: 0 },
 		closed: { opacity: 0, x: '100%' },

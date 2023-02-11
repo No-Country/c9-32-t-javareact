@@ -1,4 +1,4 @@
-import { IGlobalContext } from '../types';
+import { IGlobalContext } from '@types';
 import GlobalContext from './GlobalContext';
 
 export const GlobalProvider: React.FC<IGlobalContext> = ({ children }) => (
