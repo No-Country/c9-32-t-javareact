@@ -1,5 +1,10 @@
+import React from 'react';
 import { ReactElement } from 'react';
-import { Services, Hero } from './components';
+import Hero from './Hero';
+
+import Services from './Services';
+
+
 
 function HomePage(): ReactElement {
 	return (

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import LandingLayout from '@components/layout/LandingLayout';
+import LandingLayout from '@/components/layout/Landing';
 
 import Home from '@pages/Home';
 import NotFound from '@/pages/NotFound';
