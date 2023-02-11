@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Close } from '../../icons/Close';
-import Bars from '../../icons/Bars';
-import { useMediaQuery } from '../../../hooks/useMediaQuery';
+import { Close } from '../../../icons/Close';
+import Bars from '../../../icons/Bars';
+import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 
 const Nav = () => {
 	const [showNav, setShowNav] = useState<boolean>(false);

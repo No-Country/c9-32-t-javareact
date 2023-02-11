@@ -1,3 +1,1 @@
-export { default as Footer } from './Footer';
-export { default as Nav } from './Header';
-
+export { default as LandingLayout } from './LandingLayout';
