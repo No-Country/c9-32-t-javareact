@@ -23,7 +23,7 @@
 
 	/* SHARED STYLES */
 	.container {
-		@apply w-full max-w-7xl mx-auto px-2;
+		@apply w-full max-w-7xl mx-auto px-4;
 	}
 	.text {
 		@apply text-gray-300 font-[300] leading-[27px];
