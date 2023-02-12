@@ -29,3 +29,8 @@ export interface IEmployee{
 	address: string
 	isaVailable:string
 }
+
+export interface IButton{
+	text:string
+	customClass:string
+}

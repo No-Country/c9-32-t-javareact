@@ -28,11 +28,12 @@
 	.text {
 		@apply text-gray-300 font-[300] leading-[27px];
 	}
-
-	
 	#root{
 		@apply font-roboto
 	}
+	.button{
+		@apply uppercase  min-w-[150px] text-center rounded  cursor-pointer border-white border-2  py-2 hover:scale-95 duration-100
+ 	}
 
 
 
@@ -40,30 +41,27 @@
 
 
 	nav {
-    @apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  lg:relative  ;
+    @apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  md:relative  bg-customViolet text-white  ;
   }
 
 	.nav-list_container {
-		@apply p-0  bg-customViolet text-white  relative flex h-full w-full flex-col  justify-center items-center gap-3 lg:flex-row  lg:h-[56px] lg:w-full lg:justify-between ;
+		@apply   container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row  md:pr-8 lg:pr-10 md:gap-10 lg:gap-20 ;
 	}
 
 	.nav-list {
-		@apply  w-full  h-screen flex flex-col justify-center items-center gap-20  text-[16px]  uppercase  lg:flex-row lg:h-auto lg:justify-center;
+		@apply  w-full flex flex-col justify-end  items-center gap-20  text-[16px]  uppercase  md:flex-row md:h-auto md:gap-10  lg:gap-20    xl:gap-28 ;
 	}
 
 	.nav_link-item {
-		@apply block hover:scale-90 font-sans transition-all  delay-100  duration-200 tracking-[1px];
+		@apply block hover:scale-95  transition-all  delay-100  duration-200 tracking-[1px];
 	}
 
 	.toggleButton {
-		@apply z-[101] absolute outline-none border-none select-none top-5 right-5 lg:hidden;
+		@apply z-[101] absolute outline-none border-none select-none top-4 right-4 md:hidden;
 	}
 
 
-	.menu-item {
-		@apply hover:text-orange-300 active:text-orange-300 hover:cursor-pointer md:font-[700];
-	}
-
+	
 
 
 	/* FOOTER */
