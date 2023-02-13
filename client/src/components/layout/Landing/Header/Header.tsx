@@ -5,6 +5,7 @@ import Bars from '@components/icons/Bars';
 import { useMediaQuery } from '@hooks/useMediaQuery';
 import { Button } from '@/components/shared/Button';
 
+
 const Nav = () => {
 	const [showNav, setShowNav] = useState<boolean>(false);
 
@@ -30,6 +31,9 @@ const Nav = () => {
 			transition: { delay: 0.1, duration: 0.2 },
 		},
 	};
+
+
+	
 	return (
 		<nav className="relative w-limited  flex items-center  justify-center  ">
 			<div className='container flex  justify-center items-center'>
