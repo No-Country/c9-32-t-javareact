@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Services from './Services';
 import Reviews from './reviews';
+import StartNow from './StartNow';
 
 function HomePage(): ReactElement {
 	return (
@@ -12,6 +13,7 @@ function HomePage(): ReactElement {
 			<h2 className="heading2">¿Cómo funciona?</h2>
 			<Services />
 			<Reviews />
+			<StartNow />
 			<h2 className="heading2 text-center ">
 				Con
 				<span className=" text-royalBlue font-semibold mx-2">
