@@ -21,7 +21,11 @@ module.exports = {
 			},
 			fontFamily: {
 				roboto: "'Roboto', sans-serif",
-			},
+			}, 
+      
+      screens : {
+        'tablet': '400px'
+      },
 		},
 	},
 	plugins: [],
