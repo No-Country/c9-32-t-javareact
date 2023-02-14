@@ -1,10 +1,22 @@
 import { Service } from "../molecules/Service"
-
+import data from '../../utils/data.json'
+import { IService } from "@/types"
 
 const ServicesCarousel = () => {
+
+    const services  = data.services
   return (
     <section>
-      <Service src={"images/services/home.jpg"} serviceType={"Home"} description={"Limpieza de salas, habitaciones y cocinas."} alt={"Service-home-image"}/>
+      
+
+
+      {
+        services.map( (service:IService,i) => {
+          return (
+            <Service key={i} src={service.src} serviceType={service.serviceType} description={service.description} alt={service.alt}/>
+          )
+        })
+      }
 
     </section>
   )
