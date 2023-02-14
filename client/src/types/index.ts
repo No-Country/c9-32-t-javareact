@@ -34,3 +34,11 @@ export interface IButton{
 	text:string
 	customClass:string
 }
+
+export interface IService{
+	src:string
+	serviceType:string
+	description:string
+	alt:string
+
+}
