@@ -27,7 +27,7 @@ const REVIEW_DATA = [
 function Reviews() {
 	return (
 		<section className="my-12">
-			<h2 className=" sm:text-4xl text-3xl mb-4  text-gray-900 text-center">
+			<h2 className="heading2 text-center">
 				Reseñas de nuestros
 				<span className=" text-royalBlue font-semibold"> clientes</span>
 			</h2>

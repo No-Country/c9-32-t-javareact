@@ -25,11 +25,14 @@
 	.container {
 		@apply w-full max-w-7xl mx-auto px-4;
 	}
-	.text {
-		@apply text-gray-300 font-[300] leading-[27px];
-	}
 	#root{
 		@apply font-roboto
+	}
+	.heading2{
+		@apply sm:text-4xl text-3xl
+	}
+	.text {
+		@apply text-gray-300 font-[300] leading-[27px];
 	}
 	.button{
 		@apply uppercase  min-w-[150px] text-center rounded  cursor-pointer border-white border-2  py-2 hover:scale-95 duration-100
