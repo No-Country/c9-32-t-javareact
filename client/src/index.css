@@ -93,10 +93,10 @@
 	/* FOOTER */
 
 	.footer {
-		@apply bg-customViolet w-full  mt-10 flex flex-col  items-center gap-10 p-5 md:mx-auto md:pb-10;
+		@apply bg-customViolet text-white mt-10 pt-5 flex flex-col items-center justify-center gap-5 sm:h-60 sm:flex-row sm:items-start sm:gap-20 sm:pt-12;
 	}
 
-	.footer__nav-items {
-		@apply flex flex-col  items-center gap-5 font-bold text-white uppercase text-sm tracking-[2px] sm:flex-row md:gap-10 lg:gap-24 lg:text-base;
+	.footer__nav-title {
+		@apply text-lg font-semibold;
 	}
 }
