@@ -16,17 +16,22 @@ import { useEffect, useState } from 'react';
 const ServicesCarousel = () => {
 	const services = data.services;
 	const [slidesCant, setSlidesCant] = useState(1.1);
+	const [disableLeft, setDisableLeft] = useState(false)
+	const [disableRight, setDisableRight] = useState(false)
 
 	useEffect(() => {
-		window.innerWidth > 600 && setSlidesCant(2);
-		window.innerWidth > 1024 && setSlidesCant(3);
-		window.innerWidth > 1280 && setSlidesCant(4);
+		window.innerWidth > 400 && setSlidesCant(2);
+		window.innerWidth > 768 && setSlidesCant(3);
+		window.innerWidth > 1024 && setSlidesCant(4);
+		window.innerWidth > 1280 && setSlidesCant(5);
+
 	}, [window.innerWidth]);
 
 	return (
 		<CarouselProvider
+		
 			naturalSlideWidth={100}
-			naturalSlideHeight={110}
+			naturalSlideHeight={150}
 			totalSlides={services.length}
 			visibleSlides={slidesCant}
 			className="relative rounded-xl tablet:px-4"
@@ -47,11 +52,12 @@ const ServicesCarousel = () => {
 				})}
 			</Slider>
 			<ButtonBack
-				className="slider-arrow left-0 tablet:-left-3 "
+				className="slider-arrow  left-0 tablet:-left-3 "
 				children={<ArrowLeft />}
 			/>
 			<ButtonNext
-				className="slider-arrow right-0 tablet:-right-3  "
+				
+				className={` slider-arrow right-0 tablet:-right-3 `}
 				children={<ArrowRight />}
 			/>
 		</CarouselProvider>
