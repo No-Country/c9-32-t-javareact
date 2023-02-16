@@ -73,7 +73,7 @@
 
 	/* SERVICES */
 	.service-container{
-		@apply rounded-xl  overflow-hidden flex flex-col mx-1 justify-center items-start  border-gray-400 border-[1px]     text-start
+		@apply rounded-xl  overflow-hidden flex flex-col mx-5 justify-center items-start  border-gray-400 border-[1px]     text-start
 	}
 
 	.service-subcontainer{
