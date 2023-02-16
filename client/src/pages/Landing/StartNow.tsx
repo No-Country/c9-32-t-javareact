@@ -13,7 +13,7 @@ function StartNow(): ReactElement {
 				<div className="order-1 md:order-none md:w-1/2  flex flex-col gap-8 w-full">
 					<h2 className="heading2 font-semibold">Empieza ahora</h2>
 
-					<form className="flex flex-col gap-4 ">
+					<form className="flex w-full flex-col gap-4 ">
 						<Input
 							name="firstName"
 							value={firstName}
@@ -24,7 +24,7 @@ function StartNow(): ReactElement {
 							name="lastName"
 							value={lastName}
 							onChange={(e) => setLastName(e.target.value)}
-							placeholder="Epellido"
+							placeholder="Apellido"
 						/>
 						<Input
 							name="email"

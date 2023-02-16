@@ -1,6 +1,7 @@
 import Router from './utils/Router';
 import GlobalContext from './context/GlobalContext';
-import getAllUsers from './utils/functions/getUsers';
+import getAllUsers from './utils/functions/getAllUsers';
+
 
 function App() {
 	getAllUsers()
@@ -11,4 +12,4 @@ function App() {
 	);
 }
 
-export default App;
+export default App; 

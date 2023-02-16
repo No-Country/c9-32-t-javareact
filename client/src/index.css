@@ -99,4 +99,38 @@
 	.footer__nav-title {
 		@apply text-lg font-semibold;
 	}
+
+
+
+
+
+
+
+	/* FORMS */
+
+
+		/* register */	
+
+		.form {
+			@apply w-full   max-w-2xl mx-auto mt-20 flex flex-col items-center justify-center gap-12 mb-5;
+		}
+		.input-container {
+			@apply w-full flex flex-col relative z-0 border px-3 py-2;
+		}
+		.input {
+			@apply w-full bg-transparent  font-bold  text-[14px]  mt-2    outline-none;
+		}
+	
+		.label {
+			@apply absolute z-10  tracking-widest  text-[12px] font-bold -top-3 transition-all duration-300;
+		}
+		.label-translate {
+			@apply -translate-y-5;
+		}
+		.label-error {
+			@apply absolute right-0 text-red-500   text-[10px] -top-3;
+		}
+		.submit {
+			@apply mt-5  text-[18px] tracking-[2px] uppercase bg-customViolet px-3 py-2 rounded text-white  duration-300 font-[500] hover:opacity-90 ;
+		}
 }

@@ -1,4 +1,5 @@
-import ReviewCard from './ReviewCard';
+import ReviewCard from "./ReviewCard";
+
 
 const REVIEW_DATA = [
 	{

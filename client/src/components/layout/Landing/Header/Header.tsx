@@ -4,6 +4,7 @@ import { Close } from '@components/icons/Close';
 import Bars from '@components/icons/Bars';
 import { useMediaQuery } from '@hooks/useMediaQuery';
 import { Button } from '@/components/shared/Button';
+import { Link } from 'react-router-dom';
 
 
 const Nav = () => {
@@ -37,9 +38,9 @@ const Nav = () => {
 	return (
 		<nav className="relative w-limited  flex items-center  justify-center  ">
 			<div className='container flex  justify-center items-center'>
-				<div className=" h-[56px] flex items-center font-bold tracking-widest md:ml-10 lg:ml-20">
+				<Link  to={'/'} className=" h-[56px] flex items-center font-bold tracking-widest md:ml-10 lg:ml-20">
 					LOGOLOGO
-				</div>
+				</Link>
 				<motion.nav
 					animate={showNav ? 'open' : 'closed'}
 					variants={variants || undefined}
