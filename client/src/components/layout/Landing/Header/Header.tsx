@@ -67,7 +67,7 @@ const Nav = () => {
 								);
 							})}
 						</ul>
-						<Button text={'Iniciar Sesión'} customClass={''} />
+						<Button text={'Iniciar Sesión'} customClass={'hidden md:block'} />
 					</motion.div>
 				</motion.nav>
 				<motion.button
