@@ -10,10 +10,10 @@ function StartNow(): ReactElement {
 	return (
 		<section>
 			<div className="container flex py-8 md:py-24 md:flex-row flex-col items-center justify-between gap-12">
-				<div className="order-1 md:order-none md:w-1/2  flex flex-col gap-8">
+				<div className="order-1 md:order-none md:w-1/2  flex flex-col gap-8 w-full">
 					<h2 className="heading2 font-semibold">Empieza ahora</h2>
 
-					<form className="flex flex-col gap-4">
+					<form className="flex flex-col gap-4 ">
 						<Input
 							name="firstName"
 							value={firstName}
