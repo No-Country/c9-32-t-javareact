@@ -6,6 +6,7 @@ import { LogIn, Register } from '@/components/Forms';
 import LandingPage from '@/pages/Landing/Landing';
 import NotFound from '@/pages/NotFound';
 
+
 function Router() {
 	return (
 		<>

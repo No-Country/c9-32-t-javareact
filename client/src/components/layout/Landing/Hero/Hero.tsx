@@ -24,7 +24,7 @@ function Hero(): ReactElement {
 						<button className="hidden md:block w-full text-white bg-royalBlue border-0 py-2 px-6 focus:outline-none hover:bg-royalBlue-600 rounded-[100px] text-lg text-center">
 							Buscar Servicio
 						</button>
-						<button className="md:hidden w-full text-white bg-royalBlue border-0 py-2 px-6 focus:outline-none hover:bg-royalBlue-600 rounded-[100px] text-lg text-center">
+						<button className="md:hidden w-full text-white bg-royalBlue border-0 py-2 px-6 focus:outline-none hover:bg-royalBlue-600 rounded-[100px] text-lg text-center" onClick={() => navigate('/login')}>
 							Iniciar sesión
 						</button>
 						<button className="md:hidden w-full text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded-[100px] text-lg text-center">

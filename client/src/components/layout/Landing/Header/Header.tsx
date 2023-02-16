@@ -10,7 +10,7 @@ const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
 
-	const navItems = ['Nosotros', 'Servicios', 'Ofertas'];
+	const navItems = ['Nosotros', 'Reseñas', 'Precios'];
 
 	const isSmall = useMediaQuery('(min-width: 768px)');
 
@@ -33,16 +33,14 @@ const Nav = () => {
 		},
 	};
 
-	const onHandleLoginClick = () => navigate('/login');
-
 	return (
 		<nav className="relative w-limited  flex items-center  justify-center  ">
 			<div className="container flex  justify-center items-center">
 				<Link
 					to={'/'}
-					className=" h-[56px] flex items-center font-bold tracking-widest md:ml-10 lg:ml-20"
+					className=" h-[56px] flex items-center text-xl mr-5 md:mr-0 font-bold tracking-widest "
 				>
-					LOGOLOGO
+					DustBusters
 				</Link>
 				<motion.nav
 					animate={showNav ? 'open' : 'closed'}
@@ -70,11 +68,18 @@ const Nav = () => {
 								);
 							})}
 						</ul>
-						<Button
-							text={'Iniciar Sesión'}
-							customClass={'hidden md:block'}
-							onClick={onHandleLoginClick}
-						/>
+						<div className="flex gap-5 w-full justify-end ">
+							<Button
+								text={'Iniciar Sesión'}
+								to="/login"
+								customClass={'hidden md:block'}
+							/>
+							<Button
+								text={'Registro'}
+								to="/register"
+								customClass={'hidden md:block'}
+							/>
+						</div>
 					</motion.div>
 				</motion.nav>
 				<motion.button

@@ -35,7 +35,7 @@
 		@apply text-gray-300 font-[300] leading-[27px];
 	}
 	.button{
-		@apply uppercase  min-w-[150px] text-center rounded  cursor-pointer border-white border-2  py-2 hover:scale-95 duration-100
+		@apply uppercase rounded-full text-center   cursor-pointer border-gray-200 border-2 px-3 py-2 hover:scale-95 duration-100
  	}
 	 .center-absolute {
     @apply absolute left-[50%] right-[50%] -translate-x-[50%];
@@ -50,15 +50,15 @@
   }
 
 	.nav-list_container {
-		@apply   container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row  md:pr-8 lg:pr-10 md:gap-10 lg:gap-20 ;
+		@apply   container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row   lg:pr-10 md:gap-5 lg:gap-20 md:justify-between ;
 	}
 
 	.nav-list {
-		@apply  w-full flex flex-col justify-end  items-center gap-20  text-[16px]  uppercase  md:flex-row md:h-auto md:gap-10  lg:gap-20    xl:gap-28 ;
+		@apply  w-full flex flex-col justify-end  items-center gap-20  text-[16px]  uppercase  md:flex-row md:h-auto md:gap-5  lg:gap-20    xl:gap-28 ;
 	}
 
 	.nav_link-item {
-		@apply block hover:scale-95  transition-all  delay-100  duration-200 tracking-[1px];
+		@apply block hover:scale-95 text-base  transition-all  delay-100  duration-200 ;
 	}
 
 	.toggleButton {
@@ -112,7 +112,7 @@
 		/* register */	
 
 		.form {
-			@apply w-full   max-w-2xl mx-auto mt-14 flex flex-col items-center justify-center gap-10 mb-5;
+			@apply w-full   max-w-2xl mx-auto mt-5 md:mt-10 flex flex-col items-center justify-center gap-5 mb-5;
 		}
 		.input-container {
 			@apply w-full flex flex-col relative z-0 border px-3 py-2 border-black rounded-sm;
@@ -128,9 +128,12 @@
 			@apply -translate-y-5;
 		}
 		.label-error {
-			@apply absolute right-0 text-red-500   text-[10px] -top-3;
+			@apply absolute left-0 text-red-500   text-[10px] -bottom-4;
 		}
 		.submit {
-			@apply mt-5  text-[18px] tracking-[2px] uppercase bg-customViolet px-3 py-2 rounded-full w-full text-white  duration-300 font-[500] hover:opacity-90 ;
+			@apply  rounded-full w-full  text-[18px]  tracking-[1px]  bg-customViolet px-5 py-2  text-white  duration-300 font-[500] hover:opacity-90 ;
+		}
+		.terms-bold{
+			@apply font-bold
 		}
 }
