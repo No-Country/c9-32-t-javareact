@@ -16,8 +16,7 @@ import { useEffect, useState } from 'react';
 const ServicesCarousel = () => {
 	const services = data.services;
 	const [slidesCant, setSlidesCant] = useState(1.1);
-	const [disableLeft, setDisableLeft] = useState(false)
-	const [disableRight, setDisableRight] = useState(false)
+	
 
 	useEffect(() => {
 		window.innerWidth > 400 && setSlidesCant(2);
@@ -31,10 +30,10 @@ const ServicesCarousel = () => {
 		<CarouselProvider
 		
 			naturalSlideWidth={100}
-			naturalSlideHeight={150}
+			naturalSlideHeight={135}
 			totalSlides={services.length}
 			visibleSlides={slidesCant}
-			className="relative rounded-xl tablet:px-4"
+			className="relative rounded-xl  pt-[10px] tablet:px-4 "
 		>
 			<Slider className="">
 				{services.map((service: IService, i) => {

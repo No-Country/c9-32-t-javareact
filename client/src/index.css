@@ -73,7 +73,7 @@
 
 	/* SERVICES */
 	.service-container{
-		@apply rounded-xl  overflow-hidden flex flex-col mx-2 justify-center items-start  border-gray-400 border-[1px]     text-start
+		@apply rounded-xl flex flex-col mx-2 justify-center items-start overflow-hidden  border-gray-400 border-[1px]  text-start
 	}
 
 	.service-subcontainer{
@@ -86,10 +86,10 @@
 		@apply w-full 
 	}
 	.slider-arrow{
-		@apply absolute hidden tablet:block bottom-0 top-0 disabled:hidden
+		@apply absolute hidden tablet:block disabled:hidden   h-full top-0
 	}
 	
-
+ 
 	/* FOOTER */
 
 	.footer {
