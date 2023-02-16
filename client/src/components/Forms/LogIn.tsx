@@ -1,15 +1,12 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { EyeClosed, EyeOpen } from '../icons';
 import { Label } from '../shared/Label';
 import Terms from './Register/Terms';
 
 export type FormValues = {
-	userName: string;
 	email: string;
-	phone: number;
 	password: string;
-	repeatPassword: string;
-
-	// message: string;
 };
 
 const inputClasses = {
@@ -19,6 +16,8 @@ const inputClasses = {
 };
 
 const LogIn = () => {
+	const [eyeClicked, setEyeClicked] = useState<boolean>(false);
+
 	const {
 		register,
 		reset,
@@ -28,6 +27,8 @@ const LogIn = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 	};
+
+	const onHandleEyeClick = () => setEyeClicked(!eyeClicked);
 
 	return (
 		<>
@@ -85,8 +86,14 @@ const LogIn = () => {
 						})}
 						placeholder=" "
 						autoComplete="off"
-						type="password"
+						type={eyeClicked ? 'text' : 'password'}
 					/>
+					<div
+						className="absolute right-2 top-4"
+						onClick={onHandleEyeClick}
+					>
+						{eyeClicked ? <EyeOpen /> : <EyeClosed />}
+					</div>
 					<Label
 						name={'password'}
 						error={errors.password}
@@ -94,6 +101,9 @@ const LogIn = () => {
 						customClass={inputClasses.label}
 					/>
 				</div>
+				<small className="self-end text-gray-500 font-medium">
+					¿Olvidaste tu contraseña?
+				</small>
 				<button className="submit">Iniciar sesión</button>
 			</form>
 			<Terms />
