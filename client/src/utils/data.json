@@ -8,39 +8,45 @@
       "alt":"home-service-img"
     },
     {
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
+      "src": "images/services/office.jpg",
+      "serviceType": "Oficina",
+      "description": "Limpieza de cubículos y espacios de trabajo.",
+      "alt":"home-service-img"
+    },{
+      "src": "images/services/construction.jpg",
+      "serviceType": "Contrucción",
+      "description": "Limpieza de escombros y restos de contrucción.",
+      "alt":"home-service-img"
+    },{
+      "src": "images/services/garden.jpg",
+      "serviceType": "Jardinería",
+      "description": "Podado y mantenimiento de tu jardín.",
+      "alt":"home-service-img"
+    },{
+      "src": "images/services/carpet.jpg",
+      "serviceType": "Alfombras",
+      "description": "Limpieza exhaustiva de alfombras.",
+      "alt":"home-service-img"
+    },{
+      "src": "images/services/windows.jpg",
+      "serviceType": "Ventanas",
+      "description": "Limpieza interior y exterior de ventanas.",
+      "alt":"home-service-img"
+    },{
+      "src": "images/services/car-inside.jpg",
+      "serviceType": "Carro",
+      "description": "Limpieza interior y exterior de tu automovil.",
       "alt":"home-service-img"
     },{
       "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
+      "serviceType": "couch",
+      "description": "Limpieza de telas, asientos y muebles y pieles .",
       "alt":"home-service-img"
-    },{
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
-      "alt":"home-service-img"
-    },{
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
-      "alt":"home-service-img"
-    },{
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
-      "alt":"home-service-img"
-    },{
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
-      "alt":"home-service-img"
-    },{
-      "src": "images/services/home.jpg",
-      "serviceType": "Home",
-      "description": "Limpieza de salas, habitaciones y cocinas.",
+    }
+    ,{
+      "src": "images/services/mall.jpg",
+      "serviceType": "Comercial",
+      "description": "Podado y mantenimiento de tu jardín.",
       "alt":"home-service-img"
     }
   ]

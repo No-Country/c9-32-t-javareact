@@ -26,7 +26,7 @@ const ServicesCarousel = () => {
 	return (
 		<CarouselProvider
 			naturalSlideWidth={100}
-			naturalSlideHeight={100}
+			naturalSlideHeight={110}
 			totalSlides={services.length}
 			visibleSlides={slidesCant}
 			className="relative rounded-xl tablet:px-4"
