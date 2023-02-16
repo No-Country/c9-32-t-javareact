@@ -2,20 +2,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import LandingLayout from '@/components/layout/Landing';
 
+import { LogIn, Register } from '@/components/Forms';
 import LandingPage from '@/pages/Landing/Landing';
 import NotFound from '@/pages/NotFound';
-import Register from '@/components/Forms/Register';
 
 function Router() {
 	return (
 		<>
 			<BrowserRouter>
-				
 				<Routes>
 					<Route path="/" element={<LandingLayout />}>
 						<Route index element={<LandingPage />} />
-						<Route path="/login" element={<div> Login</div>} />
-						<Route path="/register" element={<Register/>} />
+						<Route path="/login" element={<LogIn />} />
+						<Route path="/register" element={<Register />} />
 					</Route>
 					<Route
 						path="whatever"

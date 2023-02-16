@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Close } from '@components/icons/Close';
-import Bars from '@components/icons/Bars';
-import { useMediaQuery } from '@hooks/useMediaQuery';
 import { Button } from '@/components/shared/Button';
-import { Link } from 'react-router-dom';
-
+import Bars from '@components/icons/Bars';
+import { Close } from '@components/icons/Close';
+import { useMediaQuery } from '@hooks/useMediaQuery';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
 
 	const navItems = ['Nosotros', 'Servicios', 'Ofertas'];
@@ -33,12 +33,15 @@ const Nav = () => {
 		},
 	};
 
+	const onHandleLoginClick = () => navigate('/login');
 
-	
 	return (
 		<nav className="relative w-limited  flex items-center  justify-center  ">
-			<div className='container flex  justify-center items-center'>
-				<Link  to={'/'} className=" h-[56px] flex items-center font-bold tracking-widest md:ml-10 lg:ml-20">
+			<div className="container flex  justify-center items-center">
+				<Link
+					to={'/'}
+					className=" h-[56px] flex items-center font-bold tracking-widest md:ml-10 lg:ml-20"
+				>
 					LOGOLOGO
 				</Link>
 				<motion.nav
@@ -67,7 +70,11 @@ const Nav = () => {
 								);
 							})}
 						</ul>
-						<Button text={'Iniciar Sesión'} customClass={'hidden md:block'} />
+						<Button
+							text={'Iniciar Sesión'}
+							customClass={'hidden md:block'}
+							onClick={onHandleLoginClick}
+						/>
 					</motion.div>
 				</motion.nav>
 				<motion.button

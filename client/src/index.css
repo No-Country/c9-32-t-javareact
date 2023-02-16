@@ -112,10 +112,10 @@
 		/* register */	
 
 		.form {
-			@apply w-full   max-w-2xl mx-auto mt-20 flex flex-col items-center justify-center gap-12 mb-5;
+			@apply w-full   max-w-2xl mx-auto mt-14 flex flex-col items-center justify-center gap-10 mb-5;
 		}
 		.input-container {
-			@apply w-full flex flex-col relative z-0 border px-3 py-2;
+			@apply w-full flex flex-col relative z-0 border px-3 py-2 border-black rounded-sm;
 		}
 		.input {
 			@apply w-full bg-transparent  font-bold  text-[14px]  mt-2    outline-none;
@@ -131,6 +131,6 @@
 			@apply absolute right-0 text-red-500   text-[10px] -top-3;
 		}
 		.submit {
-			@apply mt-5  text-[18px] tracking-[2px] uppercase bg-customViolet px-3 py-2 rounded text-white  duration-300 font-[500] hover:opacity-90 ;
+			@apply mt-5  text-[18px] tracking-[2px] uppercase bg-customViolet px-3 py-2 rounded-full w-full text-white  duration-300 font-[500] hover:opacity-90 ;
 		}
 }

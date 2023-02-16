@@ -1,8 +1,9 @@
-import { IButton } from "@/types"
+import { IButton } from '@/types';
 
-
-export const Button = ({text, customClass}:IButton) => {
-  return (
-    <div className={`button  ${customClass}`}>{text}</div>
-  )
-}
+export const Button = ({ text, customClass, onClick }: IButton) => {
+	return (
+		<div className={`button  ${customClass}`} onClick={onClick}>
+			{text}
+		</div>
+	);
+};

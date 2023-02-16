@@ -33,6 +33,7 @@ export interface IEmployee{
 export interface IButton{
 	text:string
 	customClass:string
+	onClick: () => void
 }
 
 export interface IService{

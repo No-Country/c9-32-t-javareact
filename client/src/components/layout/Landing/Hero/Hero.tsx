@@ -1,7 +1,10 @@
-import { ReactElement } from 'react';
 import hero_img from '@assets/hero_img.png';
+import { ReactElement } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Hero(): ReactElement {
+	const navigate = useNavigate();
+
 	return (
 		<section className="text-gray-600 body-font">
 			<div className="container mx-auto flex py-8 md:py-24 md:flex-row flex-col items-center justify-between">
