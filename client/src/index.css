@@ -115,7 +115,7 @@
 			@apply w-full   max-w-2xl mx-auto mt-5 md:mt-10 flex flex-col items-center justify-center gap-5 mb-5;
 		}
 		.input-container {
-			@apply w-full flex flex-col relative z-0 border px-3 py-2;
+			@apply w-full flex flex-col relative z-0 border px-3 py-2 border-black rounded-sm;
 		}
 		.input {
 			@apply w-full bg-transparent  font-bold  text-[14px]  mt-2    outline-none;

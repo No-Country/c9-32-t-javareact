@@ -21,7 +21,8 @@
 			"@types": ["./src/types"],
 			"@pages/*": ["./src/pages/*"],
 			"@hooks/*": ["./src/hooks/*"],
-			"@assets/*": ["./src/assets/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@api/*": ["./src/api/*"]
 		}
 	},
 	"include": ["src"],
