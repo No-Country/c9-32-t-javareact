@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { EyeClosed, EyeOpen } from '../icons';
 import { Label } from '../shared/Label';
 import Terms from './Register/Terms';
+import logo from '@assets/logo.png';
 
 export type FormValues = {
 	email: string;
@@ -31,7 +33,15 @@ const LogIn = () => {
 	const onHandleEyeClick = () => setEyeClicked(!eyeClicked);
 
 	return (
-		<>
+		<main className="m-auto container">
+			<Link
+				to="/"
+				title="home"
+				className="flex justify-center items-center gap-4"
+			>
+				<h1 className="text-4xl sm:text-5xl font-bold">DustBusters</h1>
+				<img src={logo} className="w-14" />
+			</Link>
 			<div className="text-center pt-5">
 				<h2 className="font-semibold text-xl">¡Bienvenido de Nuevo!</h2>
 				<h3 className="font-medium text-lg">
@@ -107,7 +117,7 @@ const LogIn = () => {
 				<button className="submit">Iniciar sesión</button>
 			</form>
 			<Terms />
-		</>
+		</main>
 	);
 };
 export default LogIn;

@@ -6,7 +6,6 @@ import { LogIn, Register } from '@/components/Forms';
 import LandingPage from '@/pages/Landing/Landing';
 import NotFound from '@/pages/NotFound';
 
-
 function Router() {
 	return (
 		<>
@@ -14,9 +13,9 @@ function Router() {
 				<Routes>
 					<Route path="/" element={<LandingLayout />}>
 						<Route index element={<LandingPage />} />
-						<Route path="/login" element={<LogIn />} />
-						<Route path="/register" element={<Register />} />
 					</Route>
+					<Route path="/login" element={<LogIn />} />
+					<Route path="/register" element={<Register />} />
 					<Route
 						path="whatever"
 						element={<div> Agregar lo que se necesite</div>}
