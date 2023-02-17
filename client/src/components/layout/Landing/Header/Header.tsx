@@ -68,8 +68,8 @@ const Nav = () => {
 							})}
 						</ul>
 						<div className='flex gap-5 w-full justify-end '>
-						<Button text={'Iniciar Sesión'} to='/register' customClass={'hidden md:block'} />
-						<Button text={'Registro'} to='/login' customClass={'hidden md:block'} />
+						<Button text={'Iniciar Sesión'} to='/login' customClass={'hidden md:block'} />
+						<Button text={'Registro'} to='/register' customClass={'hidden md:block'} />
 						</div>
 					
 
