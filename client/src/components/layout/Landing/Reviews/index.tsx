@@ -23,6 +23,13 @@ const REVIEW_DATA = [
 		descripcion:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
 	},
+	{
+		userName: 'Usuario 4',
+		stars: 4,
+		asunto: 'asunto',
+		descripcion:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+	},
 ];
 
 function Reviews() {

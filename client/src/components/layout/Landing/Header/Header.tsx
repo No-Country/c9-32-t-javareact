@@ -2,7 +2,6 @@ import Bars from '@/components/icons/Bars';
 import { Close } from '@/components/icons/Close';
 import { Button } from '@/components/shared/Button';
 import { motion } from 'framer-motion';
-import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
@@ -70,8 +69,8 @@ const Nav = () => {
 							})}
 						</ul>
 						<div className='flex gap-5 w-full justify-end '>
-						<Button text={'Iniciar Sesión'} to='/register' customClass={'hidden md:block'} />
-						<Button text={'Registro'} to='/login' customClass={'hidden md:block'} />
+						<Button text={'Iniciar Sesión'} to='/login' customClass={'hidden md:block'} />
+						<Button text={'Registro'} to='/register' customClass={'hidden md:block'} />
 						</div>
 					</motion.div>
 				</motion.nav>
