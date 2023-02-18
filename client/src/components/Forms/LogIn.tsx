@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { EyeClosed, EyeOpen } from '../icons';
 import { Label } from '../shared/Label';
+import Header from './Register/Header';
 import Terms from './Register/Terms';
-import logo from '@assets/logo.png';
 
 export type FormValues = {
 	email: string;
@@ -33,91 +32,88 @@ const LogIn = () => {
 	const onHandleEyeClick = () => setEyeClicked(!eyeClicked);
 
 	return (
-		<main className="m-auto container">
-			<Link
-				to="/"
-				title="home"
-				className="flex justify-center items-center gap-4"
-			>
-				<h1 className="text-4xl sm:text-5xl font-bold">DustBusters</h1>
-				<img src={logo} className="w-14" />
-			</Link>
-			<div className="text-center pt-5">
-				<h2 className="font-semibold text-xl">¡Bienvenido de Nuevo!</h2>
-				<h3 className="font-medium text-lg">
-					Inicia sesión en tu cuenta y disfruta de una experiencia de
-					limpieza sin estrés.
-				</h3>
-			</div>
-			<form
-				className="form"
-				onSubmit={handleSubmit}
-				action="submit"
-				autoComplete="new-password"
-			>
-				<div
-					className={`${inputClasses.root} ${
-						errors.email && 'border-2  border-red-600'
-					}`}
-				>
-					<input
-						className={`${inputClasses.input}  `}
-						type="email"
-						{...register('email', {
-							required: 'Campo requerido',
-							pattern: {
-								value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
-								message: 'Error de formato',
-							},
-						})}
-						placeholder=" "
-						autoComplete="off"
-					/>
-					<Label
-						name={'email'}
-						error={errors.email}
-						label="Correo electrónico"
-						customClass={inputClasses.label}
-					/>
+		<>
+			<Header />
+			<main className="m-auto container">
+				<div className="text-center pt-5">
+					<h2 className="font-semibold text-xl">
+						¡Bienvenido de Nuevo!
+					</h2>
+					<h3 className="font-medium text-lg">
+						Inicia sesión en tu cuenta y disfruta de una experiencia
+						de limpieza sin estrés.
+					</h3>
 				</div>
-				<div
-					className={`${inputClasses.root} ${
-						errors.password && 'border-2  border-red-600'
-					}`}
+				<form
+					className="form"
+					onSubmit={handleSubmit}
+					action="submit"
+					autoComplete="new-password"
 				>
-					<input
-						className={`${inputClasses.input} `}
-						{...register('password', {
-							required: 'Campo requerido',
-							minLength: {
-								value: 5,
-								message: 'Demasiado corto',
-							},
-						})}
-						placeholder=" "
-						autoComplete="off"
-						type={eyeClicked ? 'text' : 'password'}
-					/>
 					<div
-						className="absolute right-2 top-4"
-						onClick={onHandleEyeClick}
+						className={`${inputClasses.root} ${
+							errors.email && 'border-2  border-red-600'
+						}`}
 					>
-						{eyeClicked ? <EyeOpen /> : <EyeClosed />}
+						<input
+							className={`${inputClasses.input}  `}
+							type="email"
+							{...register('email', {
+								required: 'Campo requerido',
+								pattern: {
+									value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
+									message: 'Error de formato',
+								},
+							})}
+							placeholder=" "
+							autoComplete="off"
+						/>
+						<Label
+							name={'email'}
+							error={errors.email}
+							label="Correo electrónico"
+							customClass={inputClasses.label}
+						/>
 					</div>
-					<Label
-						name={'password'}
-						error={errors.password}
-						label="Contraseña"
-						customClass={inputClasses.label}
-					/>
-				</div>
-				<small className="self-end text-gray-500 font-medium">
-					¿Olvidaste tu contraseña?
-				</small>
-				<button className="submit">Iniciar sesión</button>
-			</form>
-			<Terms />
-		</main>
+					<div
+						className={`${inputClasses.root} ${
+							errors.password && 'border-2  border-red-600'
+						}`}
+					>
+						<input
+							className={`${inputClasses.input} `}
+							{...register('password', {
+								required: 'Campo requerido',
+								minLength: {
+									value: 5,
+									message: 'Demasiado corto',
+								},
+							})}
+							placeholder=" "
+							autoComplete="off"
+							type={eyeClicked ? 'text' : 'password'}
+						/>
+						<div
+							className="absolute right-2 top-4"
+							onClick={onHandleEyeClick}
+						>
+							{eyeClicked ? <EyeOpen /> : <EyeClosed />}
+						</div>
+						<Label
+							name={'password'}
+							error={errors.password}
+							label="Contraseña"
+							customClass={inputClasses.label}
+						/>
+					</div>
+					<small className="self-end text-gray-500 font-medium">
+						¿Olvidaste tu contraseña?
+					</small>
+					<button className="submit">Iniciar sesión</button>
+				</form>
+				<Terms />
+			</main>
+		</>
 	);
 };
 export default LogIn;
