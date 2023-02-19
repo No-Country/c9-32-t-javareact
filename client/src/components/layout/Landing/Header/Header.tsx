@@ -34,7 +34,7 @@ const Nav = () => {
 	};
 
 	return (
-		<nav className="relative w-limited  flex items-center  justify-center  ">
+		<header className=" relative w-limited  flex items-center  justify-center  nav-container">
 			<div className="container flex  justify-center items-center">
 				<Link
 					to={'/'}
@@ -46,7 +46,7 @@ const Nav = () => {
 					animate={showNav ? 'open' : 'closed'}
 					variants={variants || undefined}
 					transition={{ duration: 0.5 }}
-					className="flex flex-col justify-center items-center lg:flex-row "
+					className="flex flex-col justify-center items-center lg:flex-row  nav-container"
 				>
 					<motion.div
 						className="nav-list_container "
@@ -68,9 +68,17 @@ const Nav = () => {
 								);
 							})}
 						</ul>
-						<div className='flex gap-5 w-full justify-end '>
-						<Button text={'Iniciar Sesión'} to='/login' customClass={'hidden md:block'} />
-						<Button text={'Registro'} to='/register' customClass={'hidden md:block'} />
+						<div className="flex gap-5 w-full justify-end ">
+							<Button
+								text={'Iniciar Sesión'}
+								to="/login"
+								customClass={'hidden md:block'}
+							/>
+							<Button
+								text={'Registro'}
+								to="/register"
+								customClass={'hidden md:block'}
+							/>
 						</div>
 					</motion.div>
 				</motion.nav>
@@ -83,7 +91,7 @@ const Nav = () => {
 					{showNav ? <Close /> : <Bars />}
 				</motion.button>
 			</div>
-		</nav>
+		</header>
 	);
 };
 

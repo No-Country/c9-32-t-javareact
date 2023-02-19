@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
 import { EyeClosed, EyeOpen } from '../icons';
 import { Label } from '../shared/Label';
 import Header from './Register/Header';
@@ -17,6 +19,7 @@ const inputClasses = {
 };
 
 const LogIn = () => {
+	const navigate = useNavigate();
 	const [eyeClicked, setEyeClicked] = useState<boolean>(false);
 
 	const {
@@ -27,6 +30,7 @@ const LogIn = () => {
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		navigate('/home');
 	};
 
 	const onHandleEyeClick = () => setEyeClicked(!eyeClicked);

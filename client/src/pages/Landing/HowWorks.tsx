@@ -44,7 +44,7 @@ function HowWorks(): ReactElement {
 function Step({ desc, icon }: Record<'desc' | 'icon', string>) {
 	return (
 		<div className="flex-1 min-w-[200px] ">
-			<div className="w-16 h-16 flex items-center justify-center rounded-full bg-royalBlue-100 text-royalBlue-500 mb-2">
+			<div className="w-16 h-16 flex items-center justify-center rounded-full bg-royalBlue-50/40 text-royalBlue-500 mb-2">
 				<i className="material-icons text-4xl">{icon}</i>
 			</div>
 			<p className="text-xl">

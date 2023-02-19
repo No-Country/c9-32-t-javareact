@@ -1,12 +1,26 @@
-import { ReactElement } from 'react';
-import Hero from '../../components/layout/Landing/Hero/Hero';
+import { ReactElement, useEffect } from 'react';
 
-import Services from '../../components/layout/Landing/Services/Services';
-import Reviews from '../../components/layout/Landing/Reviews';
+import Hero from '@components/layout/Landing/Hero/Hero';
+
+import Services from './Services';
+import Reviews from './Reviews';
 import StartNow from './StartNow';
 import HowWorks from './HowWorks';
 
+import { getUsers } from '@/api/user';
+
 function HomePage(): ReactElement {
+	/* useEffect(() => {
+		(async () => {
+			try {
+				const response = await getUsers();
+				console.log(response);
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	}, []); */
+
 	return (
 		<>
 			<Hero />

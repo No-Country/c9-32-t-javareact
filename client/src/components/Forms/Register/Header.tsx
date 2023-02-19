@@ -5,7 +5,7 @@ import logo from '@assets/logo-white.png';
 function Header() {
 	return (
 		<header>
-			<nav className="py-4 bg-royalBlue-500 h-[56px] flex items-center justify-center">
+			<nav className="py-4 bg-royalBlue-500 flex items-center justify-center">
 				<Link
 					to="/"
 					title="home"

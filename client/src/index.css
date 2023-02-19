@@ -23,7 +23,7 @@
 
 	/* SHARED STYLES */
 	.container {
-		@apply w-full max-w-7xl mx-auto px-4;
+		@apply  w-11/12 max-w-7xl mx-auto;
 	}
 	#root{
 		@apply font-roboto
@@ -38,16 +38,20 @@
 		@apply uppercase rounded-full text-center   cursor-pointer border-gray-200 border-2 px-3 py-2 hover:scale-95 duration-100
  	}
 	 .center-absolute {
-    @apply absolute left-[50%] right-[50%] -translate-x-[50%];
-  }
+    	@apply absolute left-[50%] right-[50%] -translate-x-[50%];
+    }
 
 
 	/* HEADER */
 
 
 	nav {
+		height: 3.5rem;
+	}
+	
+	.nav-container {
     @apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  md:relative  bg-customViolet text-white  ;
-  }
+    } 
 
 	.nav-list_container {
 		@apply   container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row   lg:pr-10 md:gap-5 lg:gap-20 md:justify-between ;
