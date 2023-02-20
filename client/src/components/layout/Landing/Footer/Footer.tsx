@@ -4,12 +4,12 @@ const Footer = () => {
 	return (
 		<footer className="footer">
 			<div>
-				<h2 className="font-roboto font-bold text-2xl tracking-wide">
+				<h2 className="font-roboto font-bold text-2xl tracking-wide max-w-xs">
 					DustBusters - LLevando la limpieza a su puerta
 				</h2>
 				
 			</div>
-			<div className="flex gap-6 md:gap-20 flex-col ">
+			<div className="flex gap-6 md:gap-20 flex-col sm:flex-row ">
 				<div>
 					<h3 className="footer__nav-title ">Website</h3>
 					<ul>
