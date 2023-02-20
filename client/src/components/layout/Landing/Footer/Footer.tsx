@@ -5,11 +5,11 @@ const Footer = () => {
 		<footer className="footer">
 			<div>
 				<h2 className="font-roboto font-bold text-2xl tracking-wide">
-					DustBusters
+					DustBusters - LLevando la limpieza a su puerta
 				</h2>
-				<p>Copyright 2023</p>
+				
 			</div>
-			<div className="flex gap-6 md:gap-20">
+			<div className="flex gap-6 md:gap-20 flex-col ">
 				<div>
 					<h3 className="footer__nav-title ">Website</h3>
 					<ul>
@@ -18,7 +18,7 @@ const Footer = () => {
 						<li>Nosotros</li>
 					</ul>
 				</div>
-				<div className="pb-10">
+				<div >
 					<h3 className="footer__nav-title ">Contacto</h3>
 					<ul>
 						<li>Email</li>

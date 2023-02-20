@@ -97,7 +97,7 @@
 	/* FOOTER */
 
 	.footer {
-		@apply bg-customViolet text-white mt-10 pt-5 flex flex-col items-center justify-center gap-5 sm:h-60 sm:flex-row sm:items-start sm:gap-20 sm:pt-12;
+		@apply bg-customViolet text-center pb-10 text-white mt-10 pt-5 flex flex-col items-center justify-center gap-5 sm:h-60 sm:flex-row sm:items-start sm:gap-20 sm:pt-12;
 	}
 
 	.footer__nav-title {
