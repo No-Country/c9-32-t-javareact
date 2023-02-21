@@ -4,8 +4,8 @@ import Hero from '@components/layout/Landing/Hero/Hero';
 
 import Services from './Services';
 import Reviews from './Reviews';
-import StartNow from './StartNow';
 import HowWorks from './HowWorks';
+import FAQ from './FAQ';
 
 import { getUsers } from '@/api/user';
 
@@ -27,7 +27,7 @@ function HomePage(): ReactElement {
 			<HowWorks />
 			<Services />
 			<Reviews />
-			<StartNow />
+			<FAQ />
 		</>
 	);
 }
