@@ -26,7 +26,7 @@ const FAQ_DATA = [
 
 function FAQ() {
 	return (
-		<section className="py-24">
+		<section className="py-24" id="FAQ">
 			<h2 className="heading2">Preguntas frecuentes</h2>
 			<hr className="border-royalBlue-500 my-8" />
 			<div className="flex flex-col gap-6">

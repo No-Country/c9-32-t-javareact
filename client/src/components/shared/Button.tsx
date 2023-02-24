@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { IButton } from '../../types';
 
 const buttonVariantStyles: Record<string, string> = {
-	contained: 'bg-royalBlue text-white',
+	contained: 'bg-royalBlue text-white hover:bg-royalBlue-600',
 	outlined: 'text-royalBlue border-2 border-royalBlue',
 };
 
@@ -25,12 +25,11 @@ export const Button = (props: buttonProps) => {
 	} = props;
 	const CustomButton = element;
 	return (
-		<CustomButton {...rest}>
-			<span
-				className={`button ${buttonVariantStyles[variant]} ${classes}`}
-			>
-				{children}
-			</span>
+		<CustomButton
+			{...rest}
+			className={`button ${buttonVariantStyles[variant]} ${classes}`}
+		>
+			<span>{children}</span>
 		</CustomButton>
 	);
 };

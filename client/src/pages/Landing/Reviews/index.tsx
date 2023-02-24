@@ -21,12 +21,12 @@ const REVIEW_DATA = [
 		asunto: 'asunto',
 		descripcion:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-	}
+	},
 ];
 
 function Reviews() {
 	return (
-		<section className="my-12">
+		<section className="my-12" id="Reseñas">
 			<h2 className="heading2 text-center">
 				Reseñas de nuestros
 				<span className=" text-royalBlue font-semibold"> clientes</span>

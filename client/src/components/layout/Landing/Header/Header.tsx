@@ -61,9 +61,12 @@ const Nav = () => {
 										onClick={() => setShowNav(false)}
 										key={i}
 									>
-										<a className=" nav_link-item" href="#">
+										<Link
+											className=" nav_link-item"
+											to={`/#${item}`}
+										>
 											{item}
-										</a>
+										</Link>
 									</motion.li>
 								);
 							})}
