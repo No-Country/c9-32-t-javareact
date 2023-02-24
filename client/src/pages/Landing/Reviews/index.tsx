@@ -1,5 +1,4 @@
-import ReviewCard from "./ReviewCard";
-
+import ReviewCard from './ReviewCard';
 
 const REVIEW_DATA = [
 	{
@@ -22,14 +21,7 @@ const REVIEW_DATA = [
 		asunto: 'asunto',
 		descripcion:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-	},
-	{
-		userName: 'Usuario 4',
-		stars: 4,
-		asunto: 'asunto',
-		descripcion:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-	},
+	}
 ];
 
 function Reviews() {

@@ -3,7 +3,7 @@ const STEPS_DATA = [
 	{
 		id: 1,
 		desc: 'Escoge uno de los servicios que ofrecen diferentes compañías',
-		icon: 'near_me',
+		icon: 'touch_app',
 	},
 	{
 		id: 2,

@@ -1,5 +1,5 @@
 import { Service } from './Service';
-import data from '../../../../utils/data.json';
+import data from '../../../utils/data.json';
 import { IService } from '@/types';
 import {
 	CarouselProvider,
@@ -9,8 +9,8 @@ import {
 	ButtonNext,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import ArrowLeft from '../../../icons/ArrowLeft';
-import ArrowRight from '../../../icons/ArrowRight';
+import ArrowLeft from '@components/icons/ArrowLeft';
+import ArrowRight from '@components/icons/ArrowRight';
 import { useEffect, useState } from 'react';
 
 const ServicesCarousel = () => {

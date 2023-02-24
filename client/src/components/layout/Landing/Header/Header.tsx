@@ -10,7 +10,7 @@ const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
 
-	const navItems = ['Nosotros', 'Reseñas', 'Precios'];
+	const navItems = ['Servicios', 'Reseñas', 'FAQ'];
 
 	const isSmall = useMediaQuery('(min-width: 768px)');
 
@@ -35,10 +35,10 @@ const Nav = () => {
 
 	return (
 		<header className=" relative w-limited  flex items-center  justify-center  nav-container">
-			<div className="container flex  justify-center items-center">
+			<div className="container flex  justify-center items-center gap-16">
 				<Link
 					to={'/'}
-					className=" h-[56px] flex items-center text-xl mr-5 md:mr-0 font-bold tracking-widest "
+					className="text-white md:text-black h-[56px] flex items-center text-xl mr-5 md:mr-0 font-extrabold  "
 				>
 					DustBusters
 				</Link>
@@ -70,15 +70,20 @@ const Nav = () => {
 						</ul>
 						<div className="flex gap-5 w-full justify-end ">
 							<Button
-								text={'Iniciar Sesión'}
+								element={Link}
+								classes={'hidden md:block'}
 								to="/login"
-								customClass={'hidden md:block'}
-							/>
+							>
+								Iniciar Sesión
+							</Button>
 							<Button
-								text={'Registro'}
+								variant="outlined"
+								element={Link}
 								to="/register"
-								customClass={'hidden md:block'}
-							/>
+								classes={'hidden md:block'}
+							>
+								Registro
+							</Button>
 						</div>
 					</motion.div>
 				</motion.nav>
