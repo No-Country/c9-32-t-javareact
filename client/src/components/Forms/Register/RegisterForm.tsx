@@ -6,6 +6,7 @@ import Input from '@components/shared/Input';
 import { Label } from '../../shared/Label';
 
 import { signInUser } from '@api/access';
+import { useNavigate } from 'react-router-dom';
 
 export type FormValues = {
 	name: string;
@@ -21,6 +22,8 @@ interface onError {
 }
 
 const RegisterForm = () => {
+	const navigate = useNavigate();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<onError>({ error: false, message: '' });
 	const {
@@ -40,7 +43,7 @@ const RegisterForm = () => {
 			});
 			const response = await signInUser(data);
 			console.log(response);
-			alert('Usuario registrado, iniciar sesión');
+			navigate('/home');
 		} catch (error: any) {
 			console.log(error);
 			console.log(error?.response);
