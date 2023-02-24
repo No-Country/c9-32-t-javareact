@@ -1,7 +1,7 @@
 import axios from './config';
 import { AxiosResponse } from 'axios';
 import { IUser } from '@/types';
-import { setToken } from './auth';
+import { deleteToken, setToken } from './auth';
 
 interface loginPayload {
 	email: string;
@@ -24,4 +24,7 @@ export async function signInUser(user: any) {
 		}
 		return response.data;
 	});
+}
+export function logoutUser() {
+	deleteToken();
 }

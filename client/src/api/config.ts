@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { getToken } from '@api/auth';
+import { AuthVerify, getToken } from '@api/auth';
 
 // swagger https://c9-32-t-javareact-production.up.railway.app/swagger-ui/index.html
 const BASE_URL = 'https://c9-32-t-javareact-production.up.railway.app/api/v1';
@@ -14,8 +14,7 @@ export const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
 	(config) => {
-		const token = getToken();
-		if (token) {
+		if (AuthVerify()) {
 			config.headers.Authorization = `Bearer ${getToken()}`;
 		}
 		return config;

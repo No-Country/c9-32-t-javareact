@@ -35,6 +35,7 @@ const LogIn = () => {
 
 	const onSubmit = async (data: any) => {
 		console.log(data);
+
 		try {
 			setIsLoading(true);
 			setError({
@@ -49,7 +50,9 @@ const LogIn = () => {
 			console.log(error?.response);
 			setError({
 				error: true,
-				message: `Error al iniciar sesión ${error?.response?.data?.message}`,
+				message: `Error al iniciar sesión ${
+					error?.response?.data?.message || ''
+				}`,
 			});
 		} finally {
 			setIsLoading(false);
