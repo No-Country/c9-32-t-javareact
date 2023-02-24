@@ -10,8 +10,12 @@ const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
 
-	const navItems = ['Servicios', 'Reseñas', 'FAQ'];
+	const navItems = [{name:'Servicios', redirect:'services'},{ name:'Reseñas', redirect:'reviews'}, {name:'FAQ', redirect:'faq'}];
 
+	 interface INavItems{
+		name:string
+		redirect:string
+	 }
 	const isSmall = useMediaQuery('(min-width: 768px)');
 
 	useEffect(() => {
@@ -55,18 +59,18 @@ const Nav = () => {
 						transition={{ delay: 0.4, duration: 0.4 }}
 					>
 						<ul className="nav-list">
-							{navItems.map((item: string, i) => {
+							{navItems.map((item: INavItems, i) => {
 								return (
 									<motion.li
 										onClick={() => setShowNav(false)}
 										key={i}
 									>
-										<Link
+										<a
 											className=" nav_link-item"
-											to={`/#${item}`}
+											href={`#${item.redirect}`}
 										>
-											{item}
-										</Link>
+											{item.name}
+										</a>
 									</motion.li>
 								);
 							})}
