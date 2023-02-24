@@ -2,7 +2,7 @@ const Terms = () => {
 	return (
 		<div className="flex flex-col justify-center items-center text-center text-xs">
 			<p>
-				Si contunúas, aceptas las{' '}
+				Si continúas, aceptas las{' '}
 				<span className="terms-bold">Condiciones de del servicio </span> de Dustbusters y
 				confirmas que has leido nuestra{' '}
 				<span className="terms-bold">Política de privadidad.</span>
