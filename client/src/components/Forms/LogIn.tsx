@@ -8,25 +8,52 @@ import { Label } from '../shared/Label';
 import Header from './Register/Header';
 import Terms from './Register/Terms';
 
-export type FormValues = {
+import { loginUser } from '@api/access';
+import Button from '@components/shared/Button';
+
+type FormValues = {
 	email: string;
 	password: string;
 };
-
+interface onError {
+	error: boolean;
+	message: string;
+}
 const LogIn = () => {
 	const navigate = useNavigate();
 	const [eyeClicked, setEyeClicked] = useState<boolean>(false);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<onError>({ error: false, message: '' });
 
 	const {
 		register,
 		reset,
 		getValues,
+		handleSubmit,
 		formState: { errors, isValid },
 	} = useForm<FormValues>({ mode: 'onChange' });
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		navigate('/home');
+	const onSubmit = async (data: any) => {
+		console.log(data);
+		try {
+			setIsLoading(true);
+			setError({
+				error: false,
+				message: '',
+			});
+			const response = await loginUser(data);
+			console.log(response);
+			navigate('/home');
+		} catch (error: any) {
+			console.log(error);
+			console.log(error?.response);
+			setError({
+				error: true,
+				message: `Error al iniciar sesión ${error?.response?.data?.message}`,
+			});
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const onHandleEyeClick = () => setEyeClicked(!eyeClicked);
@@ -46,7 +73,7 @@ const LogIn = () => {
 				</div>
 				<form
 					className="form"
-					onSubmit={handleSubmit}
+					onSubmit={handleSubmit(onSubmit)}
 					action="submit"
 					autoComplete="new-password"
 				>
@@ -71,10 +98,6 @@ const LogIn = () => {
 						type="password"
 						register={register('password', {
 							required: 'Campo requerido',
-							minLength: {
-								value: 5,
-								message: 'Demasiado corto',
-							},
 						})}
 						value={getValues('password')}
 					/>
@@ -84,8 +107,16 @@ const LogIn = () => {
 					>
 						¿Olvidaste tu contraseña?
 					</Link>
-					<button className="submit">Iniciar sesión</button>
+					{!isLoading && (
+						<Button type="submit" classes="w-full capitalize">
+							Iniciar Sesión
+						</Button>
+					)}
 				</form>
+				<p className="text-center text-red-500 text-lg">
+					{error.message}
+				</p>
+
 				<Terms />
 			</main>
 		</>

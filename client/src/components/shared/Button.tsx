@@ -2,13 +2,15 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { IButton } from '../../types';
 
-const buttonVariantStyles: Record<string, string> = {
+type buttonVariants = 'contained' | 'outlined';
+
+const buttonVariantStyles: Record<buttonVariants, string> = {
 	contained: 'bg-royalBlue text-white hover:bg-royalBlue-600',
 	outlined: 'text-royalBlue border-2 border-royalBlue',
 };
 
 interface buttonProps {
-	variant?: 'contained' | 'outlined';
+	variant?: buttonVariants;
 	classes?: string;
 	children: ReactNode;
 	element?: HTMLElement | ReactNode | any;
@@ -33,3 +35,5 @@ export const Button = (props: buttonProps) => {
 		</CustomButton>
 	);
 };
+
+export default Button;

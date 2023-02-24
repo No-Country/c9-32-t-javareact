@@ -8,7 +8,6 @@ export const axiosInstance: AxiosInstance = axios.create({
 	headers: {
 		'Content-Type': 'application/json',
 		Accept: 'application/json',
-		'Access-Control-Allow-Origin': '*',
 	},
 });
 

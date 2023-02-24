@@ -1,7 +1,8 @@
 import axios from './config';
+import { AxiosResponse } from 'axios';
 import { IUser } from '@/types';
 
-export function getUsers() {
+export function getUsers(): Promise<AxiosResponse<{ data: IUser[] }>> {
 	return axios.get(`/users`);
 }
 

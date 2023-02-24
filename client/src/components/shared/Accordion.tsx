@@ -6,7 +6,7 @@ interface AccordionProps {
 }
 
 function Accordion({ children, title }: AccordionProps): ReactElement {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 
 	return (
 		<div

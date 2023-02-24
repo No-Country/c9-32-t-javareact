@@ -1,18 +1,28 @@
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
 import { Button } from '@/components/shared/Button';
 import Input from '@components/shared/Input';
-import { useForm } from 'react-hook-form';
 import { Label } from '../../shared/Label';
 
-export type FormValues = {
-	userName: string;
-	email: string;
-	phone: number;
-	password: string;
+import { signInUser } from '@api/access';
 
-	// message: string;
+export type FormValues = {
+	name: string;
+	email: string;
+	password: string;
+	phoneNumber: string;
+	address: string;
 };
 
+interface onError {
+	error: boolean;
+	message: string;
+}
+
 const RegisterForm = () => {
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<onError>({ error: false, message: '' });
 	const {
 		register,
 		getValues,
@@ -20,9 +30,27 @@ const RegisterForm = () => {
 		handleSubmit,
 	} = useForm<FormValues>({ mode: 'onChange' });
 
-	const onSubmit = (data: any) => {
+	const onSubmit = async (data: any) => {
 		console.log(data);
-		
+		try {
+			setIsLoading(true);
+			setError({
+				error: false,
+				message: '',
+			});
+			const response = await signInUser(data);
+			console.log(response);
+			alert('Usuario registrado, iniciar sesión');
+		} catch (error: any) {
+			console.log(error);
+			console.log(error?.response);
+			setError({
+				error: true,
+				message: `Error al registrar ${error?.response?.data?.message}`,
+			});
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -34,18 +62,18 @@ const RegisterForm = () => {
 				autoComplete="new-password"
 			>
 				<Input
-					error={Boolean(errors.userName)}
-					helperText={errors?.userName?.message}
-					placeholder="Nombre de usuario"
+					error={Boolean(errors.name)}
+					helperText={errors?.name?.message}
+					placeholder="Nombre"
 					type="text"
-					register={register('userName', {
+					register={register('name', {
 						required: 'Campo requerido',
 						minLength: {
 							value: 3,
 							message: 'Demasiado corto',
 						},
 					})}
-					value={getValues('userName')}
+					value={getValues('name')}
 				/>
 				<Input
 					error={Boolean(errors.email)}
@@ -62,16 +90,6 @@ const RegisterForm = () => {
 					value={getValues('email')}
 				/>
 				<Input
-					error={Boolean(errors.phone)}
-					helperText={errors?.phone?.message}
-					placeholder="Teléfono"
-					type="text"
-					register={register('phone', {
-						required: 'Campo requerido',
-					})}
-					value={getValues('phone')}
-				/>
-				<Input
 					error={Boolean(errors.password)}
 					helperText={errors?.password?.message}
 					placeholder="Contraseña"
@@ -85,11 +103,34 @@ const RegisterForm = () => {
 					})}
 					value={getValues('password')}
 				/>
+				<Input
+					error={Boolean(errors.address)}
+					helperText={errors?.address?.message}
+					placeholder="Dirección"
+					type="address"
+					register={register('address', {
+						required: 'Campo requerido',
+					})}
+					value={getValues('address')}
+				/>
 
-				<Button type="submit" classes="w-full capitalize">
-					Registrarse
-				</Button>
+				<Input
+					error={Boolean(errors.phoneNumber)}
+					helperText={errors?.phoneNumber?.message}
+					placeholder="Teléfono"
+					type="text"
+					register={register('phoneNumber', {
+						required: 'Campo requerido',
+					})}
+					value={getValues('phoneNumber')}
+				/>
+				{!isLoading && (
+					<Button type="submit" classes="w-full capitalize">
+						Registrarse
+					</Button>
+				)}
 			</form>
+			<p className="text-center text-red-500 text-lg">{error.message}</p>
 		</>
 	);
 };
