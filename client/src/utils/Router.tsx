@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import LandingLayout from '@/components/layout/Landing';
+import { LandingLayout, UserLayout } from '@/components/layout';
 
 import { LogIn, Register } from '@/components/Forms';
 import LandingPage from '@/pages/Landing';
@@ -17,7 +17,9 @@ function Router() {
 					</Route>
 					<Route path="/login" element={<LogIn />} />
 					<Route path="/register" element={<Register />} />
-					<Route path="/home" element={<HomePage />} />
+					<Route path="/" element={<UserLayout />}>
+						<Route path="/home" element={<HomePage />} />
+					</Route>
 
 					<Route
 						path="whatever"

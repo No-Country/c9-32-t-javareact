@@ -1,5 +1,11 @@
+import MyReviews from './MyReviews';
+
 function HomePage() {
-	return <div>HomePage</div>;
+	return (
+		<>
+			<MyReviews />
+		</>
+	);
 }
 
 export default HomePage;

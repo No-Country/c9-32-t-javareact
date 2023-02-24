@@ -13,11 +13,11 @@ interface ReviewCardI {
 
 function ReviewCard({ review }: ReviewCardI): ReactElement {
 	return (
-		<div className="py-6  border-gray-400 border-[1px] rounded-2xl  flex flex-col gap-6">
+		<div className="py-6  border-gray-400 border-[1px] rounded-2xl  flex flex-col gap-4">
 			<div className="flex flex-wrap justify-between items-center px-6 gap-4">
 				<img
 					alt="userImg"
-					className="w-16 h-16  rounded-full"
+					className="w-14 h-14  rounded-full"
 					src="https://dummyimage.com/302x302"
 				/>
 				<span className="flex-grow text-xl">{review.userName}</span>

@@ -24,15 +24,12 @@ const REVIEW_DATA = [
 	},
 ];
 
-function Reviews() {
+function MyReviews() {
 	return (
-		<section className="my-12 container" id="Reseñas">
-			<h2 className="heading2 text-center">
-				Reseñas de nuestros
-				<span className=" text-royalBlue font-semibold"> clientes</span>
-			</h2>
+		<section className="my-12 " id="Reseñas">
+			<h3 className="heading3 ">Tus Reseñas</h3>
 			<div className="mt-16">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3  gap-14">
 					{REVIEW_DATA.map((review) => (
 						<ReviewCard key={review.userName} review={review} />
 					))}
@@ -42,4 +39,4 @@ function Reviews() {
 	);
 }
 
-export default Reviews;
+export default MyReviews;
