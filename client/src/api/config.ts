@@ -14,6 +14,7 @@ export const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
 	(config) => {
+		console.log(AuthVerify());
 		if (AuthVerify()) {
 			config.headers.Authorization = `Bearer ${getToken()}`;
 		}

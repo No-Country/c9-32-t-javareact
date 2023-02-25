@@ -14,6 +14,9 @@ export function getUser(id: string): Promise<AxiosResponse<IUser>> {
 export function createUser(user: IUser) {
 	return axios.post(`/users`, user);
 }
+export function updateUser({ id, user }: { id: string; user: IUser }) {
+	return axios.put(`/users/${id}`, user);
+}
 
 export function deleteUser(id: string) {
 	return axios.delete(`/users/${id}`);
@@ -22,4 +25,28 @@ export function deleteUser(id: string) {
 export function getMyUserData() {
 	const data = decodeToken();
 	return getUser(data?.userId || '');
+}
+
+export function updateUserImage({ img, id }: any) {
+	const formData = new FormData();
+	formData.append('file', img);
+	return axios.post(`/users/upload-image/${id}`, formData);
+}
+
+export function getUserImage(id: string) {
+	console.log(id);
+	return axios
+		.get(`/users/images/${id}`, {
+			responseType: 'blob',
+		})
+		.then((response) => {
+			console.log(response);
+			if (response.data.size > 0) {
+				return {
+					url: URL.createObjectURL(response.data),
+					file: response.data,
+				};
+			}
+			return { url: '', file: '' };
+		});
 }

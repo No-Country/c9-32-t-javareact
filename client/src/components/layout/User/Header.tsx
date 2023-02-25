@@ -10,7 +10,7 @@ import { useGlobalData } from '@context/GlobalContext';
 const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
-	const { userData } = useGlobalData();
+	const { userData, userImg } = useGlobalData();
 
 	const navItems = [
 		'132 Joe St Apt 3 Stockton CA 20500',
@@ -85,11 +85,16 @@ const Nav = () => {
 							</div>
 							<Link
 								to="/profile"
-								className="bg-royalBlue rounded-full flex justify-center items-center w-9 h-9"
+								className="bg-royalBlue rounded-full  w-14 h-14 overflow-hidden"
 							>
-								<i className="material-icons text-white">
-									person
-								</i>
+								<img
+									src={
+										userImg?.url ||
+										'https://via.placeholder.com/150'
+									}
+									alt="user Img"
+									className="w-full h-full object-cover"
+								/>
 							</Link>
 						</div>
 					</motion.div>
