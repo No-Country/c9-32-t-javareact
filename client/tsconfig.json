@@ -22,7 +22,8 @@
 			"@pages/*": ["./src/pages/*"],
 			"@hooks/*": ["./src/hooks/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@api/*": ["./src/api/*"]
+			"@api/*": ["./src/api/*"],
+			"@context/*": ["./src/context/*"]
 		}
 	},
 	"include": ["src"],

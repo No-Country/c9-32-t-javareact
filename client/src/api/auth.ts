@@ -13,6 +13,7 @@ export function deleteToken() {
 }
 interface tokenPayload {
 	sub: string;
+	userId: string;
 	iat: number;
 	exp: number;
 }

@@ -3,43 +3,43 @@ export interface IGlobalContext {
 }
 
 export interface IUser {
-	id: string
-	name: string
-	email: string
-	password: string
-	address: string
-	phoneNumber: number
+	id: string;
+	name: string;
+	email: string;
+	address: string;
+	phoneNumber: string;
+	role: string;
+	image: string;
+	credentialsNonExpired: boolean;
 }
 
 export interface ICleanService {
-	id: string
-	serviceType: string
-	freeTime: Date
-	address: string
-	price: number
-	state: string
+	id: string;
+	serviceType: string;
+	freeTime: Date;
+	address: string;
+	price: number;
+	state: string;
 }
 
-
 export interface IEmployee {
-	id: string
-	name: string
-	email: string
-	password: string
-	address: string
-	isaVailable: string
+	id: string;
+	name: string;
+	email: string;
+	password: string;
+	address: string;
+	isaVailable: string;
 }
 
 export interface IButton {
-	text: string
-	customClass: string
-	to: string
+	text: string;
+	customClass: string;
+	to: string;
 }
 
 export interface IService {
-	src: string
-	serviceType: string
-	description: string
-	alt: string
-
+	src: string;
+	serviceType: string;
+	description: string;
+	alt: string;
 }

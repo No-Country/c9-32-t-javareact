@@ -33,6 +33,10 @@ export default defineConfig({
 				find: '@api',
 				replacement: path.resolve(__dirname, 'src/api'),
 			},
+			{
+				find: '@context',
+				replacement: path.resolve(__dirname, 'src/context'),
+			},
 		],
 	},
 });

@@ -5,10 +5,12 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@hooks/useMediaQuery';
+import { useGlobalData } from '@context/GlobalContext';
 
 const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
+	const { userData } = useGlobalData();
 
 	const navItems = [
 		'132 Joe St Apt 3 Stockton CA 20500',
@@ -74,17 +76,21 @@ const Nav = () => {
 								);
 							})}
 						</ul>
-						<div className="flex gap-5 w-full justify-end ">
+						<div className="flex gap-2 w-full justify-end items-center">
+							<span>{userData?.name}</span>
 							<div className=" flex justify-center items-center w-10 h-10">
 								<i className="material-icons-outlined  ">
 									notifications
 								</i>
 							</div>
-							<div className="bg-royalBlue rounded-full flex justify-center items-center w-9 h-9">
+							<Link
+								to="/profile"
+								className="bg-royalBlue rounded-full flex justify-center items-center w-9 h-9"
+							>
 								<i className="material-icons text-white">
 									person
 								</i>
-							</div>
+							</Link>
 						</div>
 					</motion.div>
 				</motion.nav>

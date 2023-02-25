@@ -8,7 +8,7 @@ interface loginPayload {
 	password: string;
 }
 export async function loginUser(payload: loginPayload) {
-	const response = await axios.post(`/auth/authenticate`, payload);
+	const response = await axios.post(`/auth/login`, payload);
 	console.log(response);
 	if (response.status === 200) {
 		setToken(response.data.token);

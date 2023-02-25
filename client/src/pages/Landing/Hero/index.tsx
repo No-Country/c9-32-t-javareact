@@ -13,7 +13,7 @@ function Hero(): ReactElement {
 		>
 			<div className="  flex py-8 md:py-24 md:flex-row flex-col items-center justify-between">
 				<div className="order-1 md:order-none  md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-					<h1 className="sm:text-6xl text-4xl mb-10  text-gray-900 font-bold ">
+					<h1 className="sm:text-7xl text-4xl mb-10  text-gray-900 font-bold ">
 						Olvídate de limpiar por un momento
 					</h1>
 					<p className="mb-10 leading-relaxed text-xl md:text-2xl">
