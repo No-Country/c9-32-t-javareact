@@ -26,6 +26,10 @@ module.exports = {
       screens : {
         'tablet': '400px'
       },
+			
+      backgroundImage:{
+        'gradient': "url(images/background/gradient.png)"
+      }
 		},
 	},
 	plugins: [],

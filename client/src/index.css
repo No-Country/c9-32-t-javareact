@@ -4,7 +4,7 @@
 
 @layer base {
 	/* css/Sass    */
-	html{
+	html {
 		scroll-behavior: smooth;
 	}
 	li {
@@ -20,13 +20,14 @@
 
 	body {
 		overflow-x: hidden !important;
-		
 	}
 }
 
 @layer components {
 	/* Tailwind */
-
+	html {
+		@apply bg-gradient bg-no-repeat;
+	}
 	/* SHARED STYLES */
 	.container {
 		@apply w-11/12 max-w-7xl mx-auto;
@@ -41,7 +42,7 @@
 		@apply sm:text-3xl text-2xl font-bold;
 	}
 	.button {
-		@apply  text-sm uppercase rounded-full text-center cursor-pointer  px-8 py-2 pt-3 hover:scale-95 duration-100 font-semibold;
+		@apply text-sm uppercase rounded-full text-center cursor-pointer  px-8 py-2 pt-3 hover:scale-95 duration-100 font-semibold;
 	}
 	.center-absolute {
 		@apply absolute left-[50%] right-[50%] -translate-x-[50%];
@@ -57,7 +58,7 @@
 	}
 
 	.nav-container {
-		@apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  md:relative  bg-royalBlue md:bg-white;
+		@apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  md:relative  bg-royalBlue md:bg-transparent;
 	}
 
 	.nav-list_container {
