@@ -2,6 +2,7 @@ import { createContext, ReactElement, useContext, useState } from 'react';
 
 import { IGlobalContext, IUser } from '@types';
 import { getMyUserData, getUserImage } from '@/api/user';
+import { AuthVerify } from '@/api/auth';
 
 type GlobalContextType = {
 	userData: IUser | null;
@@ -54,9 +55,11 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 			image: '',
 			credentialsNonExpired: true,
 		});
+		setUserImg({ url: '', file: null });
 	};
 	const fetchUserData = async () => {
 		try {
+			console.log('token Valido->', AuthVerify());
 			const response = await getMyUserData();
 			setUserData(response.data);
 			const userImg = await getUserImage(response.data.id);

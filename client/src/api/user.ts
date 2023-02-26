@@ -39,7 +39,6 @@ export function updateUserImage({ img, id }: any) {
 }
 
 export function getUserImage(id: string) {
-	console.log(id);
 	return axios
 		.get(`/users/images/${id}`, {
 			responseType: 'blob',

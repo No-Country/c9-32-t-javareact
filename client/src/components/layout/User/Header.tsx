@@ -6,11 +6,12 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@hooks/useMediaQuery';
 import { useGlobalData } from '@context/GlobalContext';
+import { deleteToken } from '@/api/auth';
 
 const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
-	const { userData, userImg } = useGlobalData();
+	const { userData, userImg, deleteUserData } = useGlobalData();
 
 	const navItems = [
 		'132 Joe St Apt 3 Stockton CA 20500',
@@ -36,6 +37,12 @@ const Nav = () => {
 			scale: 1.2,
 			transition: { delay: 0.1, duration: 0.2 },
 		},
+	};
+
+	const logout = () => {
+		deleteUserData();
+		deleteToken();
+		navigate('/');
 	};
 
 	return (
@@ -77,7 +84,7 @@ const Nav = () => {
 							})}
 						</ul>
 						<div className="flex gap-2 w-full justify-end items-center">
-							<span>{userData?.name}</span>
+							<span className="text-md">{userData?.name}</span>
 							<div className=" flex justify-center items-center w-10 h-10">
 								<i className="material-icons-outlined  ">
 									notifications
@@ -85,7 +92,7 @@ const Nav = () => {
 							</div>
 							<Link
 								to="/profile"
-								className="bg-royalBlue rounded-full  w-14 h-14 overflow-hidden"
+								className="bg-royalBlue rounded-full  w-12 h-12 overflow-hidden"
 							>
 								<img
 									src={
@@ -96,6 +103,16 @@ const Nav = () => {
 									className="w-full h-full object-cover"
 								/>
 							</Link>
+							<button
+								className="flex justify-center items-center text-sm"
+								title="cerrar sesión"
+								onClick={logout}
+							>
+								<i className="material-icons-outlined  mr-0">
+									logout
+								</i>
+								Salir
+							</button>
 						</div>
 					</motion.div>
 				</motion.nav>
