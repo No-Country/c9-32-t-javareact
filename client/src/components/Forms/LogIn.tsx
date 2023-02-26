@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { EyeClosed, EyeOpen } from '../icons';
+import hero_img from '@assets/banner.png';
 import Input from '@components/shared/Input';
 import { Label } from '../shared/Label';
 import Header from './Register/Header';
-import Terms from './Register/Terms';
 
 import { loginUser } from '@api/access';
 import Button from '@components/shared/Button';
@@ -64,63 +64,77 @@ const LogIn = () => {
 	return (
 		<>
 			<Header />
-			<main className="m-auto container">
-				<div className="text-center pt-5">
-					<h2 className="font-semibold text-xl">
+			<main className="m-auto container flex justify-between  gap-2">
+				<div className="">
+					<h2 className="font-semibold text-4xl text-bold">
 						¡Bienvenido de Nuevo!
 					</h2>
-					<h3 className="font-medium text-lg">
+					<h3 className="font-medium text-md my-6">
 						Inicia sesión en tu cuenta y disfruta de una experiencia
 						de limpieza sin estrés.
 					</h3>
-				</div>
-				<form
-					className="form"
-					onSubmit={handleSubmit(onSubmit)}
-					action="submit"
-					autoComplete="new-password"
-				>
-					<Input
-						error={Boolean(errors.email)}
-						helperText={errors?.email?.message}
-						placeholder="Email"
-						type="email"
-						register={register('email', {
-							required: 'Campo requerido',
-							pattern: {
-								value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
-								message: 'Error de formato',
-							},
-						})}
-						value={getValues('email')}
-					/>
-					<Input
-						error={Boolean(errors.password)}
-						helperText={errors?.password?.message}
-						placeholder="Password"
-						type="password"
-						register={register('password', {
-							required: 'Campo requerido',
-						})}
-						value={getValues('password')}
-					/>
-					<Link
-						className="self-end text-gray-500 font-medium"
-						to="/register"
+					<form
+						className="form"
+						onSubmit={handleSubmit(onSubmit)}
+						action="submit"
+						autoComplete="new-password"
 					>
-						¿Olvidaste tu contraseña?
-					</Link>
-					{!isLoading && (
-						<Button type="submit" classes="w-full capitalize">
-							Iniciar Sesión
-						</Button>
-					)}
-				</form>
-				<p className="text-center text-red-500 text-lg">
-					{error.message}
-				</p>
-
-				<Terms />
+						<Input
+							error={Boolean(errors.email)}
+							helperText={errors?.email?.message}
+							placeholder="Email"
+							type="email"
+							register={register('email', {
+								required: 'Campo requerido',
+								pattern: {
+									value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
+									message: 'Error de formato',
+								},
+							})}
+							value={getValues('email')}
+						/>
+						<Input
+							error={Boolean(errors.password)}
+							helperText={errors?.password?.message}
+							placeholder="Password"
+							type="password"
+							register={register('password', {
+								required: 'Campo requerido',
+							})}
+							value={getValues('password')}
+						/>
+						<Link
+							className="self-end text-gray-500 font-medium"
+							to="/register"
+						>
+							¿Olvidaste tu contraseña?
+						</Link>
+						{!isLoading && (
+							<Button type="submit" classes="w-full capitalize">
+								Iniciar Sesión
+							</Button>
+						)}
+					</form>
+					<p className="text-center text-red-500 text-lg">
+						{error.message}
+					</p>
+					<p className="">
+						¿No tienes cuenta?
+						<Link
+							className="ml-1 text-royalBlue hover:underline"
+							to="/register"
+						>
+							Regístrate
+						</Link>
+					</p>
+				</div>
+				<div className="w-1/3 hidden lg:inline">
+					<img
+						className="object-cover object-center rounded w-full"
+						alt="hero"
+						src={hero_img}
+					/>
+				</div>
 			</main>
 		</>
 	);
