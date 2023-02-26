@@ -14,7 +14,6 @@ export const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
 	(config) => {
-		console.log(AuthVerify());
 		if (AuthVerify()) {
 			config.headers.Authorization = `Bearer ${getToken()}`;
 		}
@@ -30,8 +29,8 @@ axiosInstance.interceptors.response.use(
 		return response;
 	},
 	(error) => {
-		/* if (error && error.response.status === 401) {
-			console.log('Error 401 fal autenticación');
+		if (error && error.response.status === 401) {
+			console.log('Error 401 falta autenticación');
 			window.location.replace('/login');
 			return Promise.reject(error);
 		}
@@ -44,7 +43,7 @@ axiosInstance.interceptors.response.use(
 			console.log('Recurso no encontrado');
 			alert('404 Recurso no encontrado');
 			return Promise.reject(error);
-		} */
+		}
 		console.log(error.response);
 		return Promise.reject(error);
 	},

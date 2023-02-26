@@ -28,9 +28,14 @@ export function getMyUserData() {
 }
 
 export function updateUserImage({ img, id }: any) {
+	console.log(img, id);
 	const formData = new FormData();
 	formData.append('file', img);
-	return axios.post(`/users/upload-image/${id}`, formData);
+	return axios.post(`/users/upload-image/${id}`, formData, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 }
 
 export function getUserImage(id: string) {

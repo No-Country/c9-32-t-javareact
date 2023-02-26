@@ -42,7 +42,7 @@ const Nav = () => {
 		<header className=" relative w-limited  flex items-center  justify-center  nav-container">
 			<div className="container flex  justify-center items-center gap-16">
 				<Link
-					to={'/'}
+					to={'/home'}
 					className="text-white md:text-black h-[56px] flex items-center text-xl mr-5 md:mr-0 font-extrabold  "
 				>
 					DustBusters

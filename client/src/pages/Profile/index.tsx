@@ -1,18 +1,15 @@
-import { useGlobalData } from '@context/GlobalContext';
+import EditUserData from './EditUserData';
+import EditUserImg from './EditUserImg';
 
 function Profile() {
-	const { userData } = useGlobalData();
-	console.log(userData);
 	return (
-		<div>
-			Perfil
-			{userData &&
-				Object.entries(userData).map(([entry, key]) => (
-					<p key={entry}>
-						{entry} - {key}
-					</p>
-				))}
-		</div>
+		<section className="my-12">
+			<h3 className="heading3">Perfil</h3>
+			<div className="flex  justify-between gap-5 mt-24">
+				<EditUserData />
+				<EditUserImg />
+			</div>
+		</section>
 	);
 }
 

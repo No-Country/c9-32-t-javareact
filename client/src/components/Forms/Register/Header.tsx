@@ -11,7 +11,7 @@ function Header() {
 					title="home"
 					className="flex justify-center items-center gap-4 text-customViolet"
 				>
-					<h1 className="text-xl sm:text-xl font-extrabold md:text-2xl xl:text-3xl">
+					<h1 className="text-xl sm:text-xl font-extrabold md:text-2xl xl:text-3xl hidden md:inline">
 						DustBusters
 					</h1>
 					<img src={logo} className="w-8 md:hidden" />

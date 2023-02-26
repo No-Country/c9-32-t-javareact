@@ -1,6 +1,7 @@
 import { createContext, ReactElement, useContext, useState } from 'react';
 
 import { IGlobalContext, IUser } from '@types';
+import { getMyUserData, getUserImage } from '@/api/user';
 
 type GlobalContextType = {
 	userData: IUser | null;
@@ -10,6 +11,7 @@ type GlobalContextType = {
 		React.SetStateAction<{ url: string; file: any }>
 	>;
 	deleteUserData: () => void;
+	fetchUserData: () => void;
 };
 const globalContextInitailState = {
 	userData: null,
@@ -17,6 +19,7 @@ const globalContextInitailState = {
 	deleteUserData: () => {},
 	userImg: { url: '', file: null },
 	setUserImg: () => {},
+	fetchUserData: () => {},
 };
 const GlobalContext = createContext<GlobalContextType>(
 	globalContextInitailState,
@@ -52,6 +55,16 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 			credentialsNonExpired: true,
 		});
 	};
+	const fetchUserData = async () => {
+		try {
+			const response = await getMyUserData();
+			setUserData(response.data);
+			const userImg = await getUserImage(response.data.id);
+			setUserImg(userImg);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<GlobalContext.Provider
@@ -61,6 +74,7 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 				userImg,
 				setUserImg,
 				deleteUserData,
+				fetchUserData,
 			}}
 		>
 			{children}
