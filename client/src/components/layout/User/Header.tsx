@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@hooks/useMediaQuery';
 import { useGlobalData } from '@context/GlobalContext';
 import { deleteToken } from '@/api/auth';
+import Location from '@/components/icons/Location';
+import SearchBar from '@/components/shared/SearchBar';
 
 const Nav = () => {
 	const navigate = useNavigate();
@@ -47,10 +49,10 @@ const Nav = () => {
 
 	return (
 		<header className=" relative w-limited  flex items-center  justify-center  nav-container">
-			<div className="container flex  justify-center items-center gap-16">
+			<div className="container flex  justify-center items-center  md:pt-2">
 				<Link
 					to={'/home'}
-					className="text-white md:text-black h-[56px] flex items-center text-xl mr-5 md:mr-0 font-extrabold  "
+					className="text-white md:text-customViolet h-[56px] flex items-center text-xl mr-5 md:mr-0 font-extrabold  "
 				>
 					DustBusters
 				</Link>
@@ -66,27 +68,32 @@ const Nav = () => {
 						variants={variantList || undefined}
 						transition={{ delay: 0.4, duration: 0.4 }}
 					>
-						<ul className="nav-list">
-							{navItems.map((item: string, i) => {
-								return (
+						<ul className="nav-list md:ml-4  w-full">
+							
 									<motion.li
 										onClick={() => setShowNav(false)}
-										key={i}
+										className='flex justify-center items-center gap-2  '
 									>
-										<Link
-											className=" nav_link-item"
-											to={`/#${item}`}
+										 <Location/> 
+										<div
+											className=" nav_link-item hover:scale-100"
 										>
-											{item}
-										</Link>
+											{navItems[0]}
+										</div>
 									</motion.li>
-								);
-							})}
+									<motion.li
+										onClick={() => setShowNav(false)}
+										className='flex justify-center items-center gap-2 w-full  '
+									>
+										<SearchBar placeholder={navItems[1]}/>
+									</motion.li>
+									
+								
 						</ul>
-						<div className="flex gap-2 w-full justify-end items-center">
-							<span className="text-md">{userData?.name}</span>
+						<div className="flex gap-2  justify-end items-center ">
+							{/* <span className="text-md">{userData?.name}</span> */}
 							<div className=" flex justify-center items-center w-10 h-10">
-								<i className="material-icons-outlined  ">
+								<i className="material-icons-outlined text-customViolet  ">
 									notifications
 								</i>
 							</div>
@@ -103,7 +110,7 @@ const Nav = () => {
 									className="w-full h-full object-cover"
 								/>
 							</Link>
-							<button
+							{/* <button
 								className="flex justify-center items-center text-sm"
 								title="cerrar sesión"
 								onClick={logout}
@@ -112,7 +119,7 @@ const Nav = () => {
 									logout
 								</i>
 								Salir
-							</button>
+							</button> */}
 						</div>
 					</motion.div>
 				</motion.nav>

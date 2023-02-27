@@ -62,7 +62,7 @@
 	}
 
 	.nav-list_container {
-		@apply container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row   lg:pr-10 md:gap-5 lg:gap-20 md:justify-between;
+		@apply container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row   lg:pr-10 md:gap-5 lg:gap-10 md:justify-between;
 	}
 
 	.nav-list {
