@@ -28,7 +28,7 @@ const RegisterForm = () => {
 	const [error, setError] = useState<onError>({ error: false, message: '' });
 	const {
 		register,
-		getValues,
+		watch,
 		formState: { errors, isValid },
 		handleSubmit,
 	} = useForm<FormValues>({ mode: 'onChange' });
@@ -65,6 +65,7 @@ const RegisterForm = () => {
 				autoComplete="new-password"
 			>
 				<Input
+					errors={watch('name')}
 					error={Boolean(errors.name)}
 					helperText={errors?.name?.message}
 					placeholder="Nombre"
@@ -76,9 +77,10 @@ const RegisterForm = () => {
 							message: 'Demasiado corto',
 						},
 					})}
-					value={getValues('name')}
+					value={watch('name')}
 				/>
 				<Input
+					errors={watch('email')}
 					error={Boolean(errors.email)}
 					helperText={errors?.email?.message}
 					placeholder="Email"
@@ -90,9 +92,10 @@ const RegisterForm = () => {
 							message: 'Error de formato',
 						},
 					})}
-					value={getValues('email')}
+					value={watch('email')}
 				/>
 				<Input
+					errors={watch('password')}
 					error={Boolean(errors.password)}
 					helperText={errors?.password?.message}
 					placeholder="Contraseña"
@@ -104,9 +107,10 @@ const RegisterForm = () => {
 							message: 'Demasiado corto',
 						},
 					})}
-					value={getValues('password')}
+					value={watch('password')}
 				/>
 				<Input
+					errors={watch('address')}
 					error={Boolean(errors.address)}
 					helperText={errors?.address?.message}
 					placeholder="Dirección"
@@ -114,10 +118,11 @@ const RegisterForm = () => {
 					register={register('address', {
 						required: 'Campo requerido',
 					})}
-					value={getValues('address')}
+					value={watch('address')}
 				/>
 
 				<Input
+					errors={watch('phoneNumber')}
 					error={Boolean(errors.phoneNumber)}
 					helperText={errors?.phoneNumber?.message}
 					placeholder="Teléfono"
@@ -125,7 +130,7 @@ const RegisterForm = () => {
 					register={register('phoneNumber', {
 						required: 'Campo requerido',
 					})}
-					value={getValues('phoneNumber')}
+					value={watch('phoneNumber')}
 				/>
 				{!isLoading && (
 					<Button type="submit" classes="w-full capitalize">

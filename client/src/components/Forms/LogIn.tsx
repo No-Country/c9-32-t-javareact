@@ -28,7 +28,7 @@ const LogIn = () => {
 	const {
 		register,
 		reset,
-		getValues,
+		watch,
 		handleSubmit,
 		formState: { errors, isValid },
 	} = useForm<FormValues>({ mode: 'onChange' });
@@ -91,7 +91,7 @@ const LogIn = () => {
 									message: 'Error de formato',
 								},
 							})}
-							value={getValues('email')}
+							value={watch('email')}
 						/>
 						<Input
 							error={Boolean(errors.password)}
@@ -101,7 +101,7 @@ const LogIn = () => {
 							register={register('password', {
 								required: 'Campo requerido',
 							})}
-							value={getValues('password')}
+							value={watch('password')}
 						/>
 						<Link
 							className="self-end text-gray-500 font-medium"
