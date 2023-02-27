@@ -11,8 +11,8 @@ function Accordion({ children, title }: AccordionProps): ReactElement {
 	return (
 		<div
 			className={`rounded border ${
-				isOpen ? '' : 'border-transparent'
-			} hover:bg-royalBlue-50/20 transition`}
+				isOpen ? 'bg-gray-300' : 'border-transparent'
+			} bg-gray-200 hover:bg-gray-300 transition`}
 		>
 			<button
 				onClick={() => setIsOpen(!isOpen)}
