@@ -1,65 +1,54 @@
 import { Service } from './Service';
 import data from '../../../utils/data.json';
 import { IService } from '@/types';
-import {
-	CarouselProvider,
-	Slider,
-	Slide,
-	ButtonBack,
-	ButtonNext,
-} from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-import ArrowLeft from '@components/icons/ArrowLeft';
-import ArrowRight from '@components/icons/ArrowRight';
-import { useEffect, useState } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const ServicesCarousel = () => {
 	const services = data.services;
-	const [slidesCant, setSlidesCant] = useState(1.1);
 	
 
-	useEffect(() => {
-		window.innerWidth > 400 && setSlidesCant(2);
-		window.innerWidth > 768 && setSlidesCant(3);
-		window.innerWidth > 1024 && setSlidesCant(4);
-		window.innerWidth > 1280 && setSlidesCant(5);
-
-	}, [window.innerWidth]);
-
+	const responsive = {
+		superLargeDesktop: {
+			// the naming can be any, depends on you.
+			breakpoint: { max: 4000, min: 3000 },
+			items: 5,
+		},
+		desktop: {
+			breakpoint: { max: 3000, min: 1024 },
+			items: 4,
+		},
+		tablet: {
+			breakpoint: { max: 1024, min: 464 },
+			items: 2,
+		},
+		mobile: {
+			breakpoint: { max: 464, min: 0 },
+			items: 1,
+		},
+	};
 	return (
-		<CarouselProvider
-		
-			naturalSlideWidth={100}
-			naturalSlideHeight={145}
-			totalSlides={services.length}
-			visibleSlides={slidesCant}
+		<Carousel
+			responsive={responsive}
 			className="relative rounded-xl  pt-[10px] tablet:px-4 "
 		>
-			<Slider className="">
+			
 				{services.map((service: IService, i) => {
 					return (
-						<Slide index={i} key={i}>
-							{' '}
+						
 							<Service
 								src={service.src}
 								serviceType={service.serviceType}
 								description={service.description}
 								alt={service.alt}
+								key={service.serviceType}
 							/>
-						</Slide>
+						
 					);
 				})}
-			</Slider>
-			<ButtonBack
-				className="slider-arrow  left-0 tablet:-left-3 "
-				children={<ArrowLeft />}
-			/>
-			<ButtonNext
-				
-				className={` slider-arrow right-0 tablet:-right-3 `}
-				children={<ArrowRight />}
-			/>
-		</CarouselProvider>
+		
+		
+		</Carousel>
 	);
 };
 export default ServicesCarousel;

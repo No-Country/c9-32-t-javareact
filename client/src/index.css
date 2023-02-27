@@ -91,9 +91,7 @@
 	.service-img {
 		@apply w-full;
 	}
-	.slider-arrow {
-		@apply absolute hidden tablet:block disabled:hidden   h-full -top-8;
-	}
+	
 
 	/* FOOTER */
 
