@@ -4,7 +4,7 @@ interface searchBar{
 
 const SearchBar = ({placeholder}:searchBar) => {
 	return (
-		<form className="w-full rounded-[300px] overflow-hidden">
+		<form className="w-full rounded-[300px] overflow-hidden border-2 border-customViolet border-opacity-60">
 			<label
 				htmlFor="default-search"
 				className="mb-2 text-sm w-full font-medium  sr-only "
@@ -33,7 +33,7 @@ const SearchBar = ({placeholder}:searchBar) => {
 				<input
 					type="search"
 					id="default-search"
-					className="block w-full p-4 pl-10 text-sm   bg-gray-50 rounded-lg focus:outline-none "
+					className="block w-full p-4 pl-10 text-sm    bg-gray-50 rounded-lg focus:outline-none "
 					placeholder={placeholder}
 					required
 				/>
