@@ -26,10 +26,13 @@ const FAQ_DATA = [
 
 function FAQ() {
 	return (
-		<section className="py-24" id="faq">
+		<section className="py-24 lg:flex" id="faq">
+			<div className='flex flex-col justify-center items-center mb-5 w-1/2'>
 			<h2 className="heading2">Preguntas frecuentes</h2>
-			<hr className="border-royalBlue-500 my-8" />
-			<div className="flex flex-col gap-6">
+				<p className='hidden lg:block p-2'>¿Sigues con dudas? <span className='underline font-bold'>Envíanos un email</span></p>
+			</div>
+			<hr className="border-royalBlue-500 opacity-75 my-8 lg:hidden" />
+			<div className="flex flex-col gap-6 w-1/2">
 				{FAQ_DATA.map(({ id, question, answer }) => (
 					<Accordion key={id} title={question}>
 						<p className="p-4">
