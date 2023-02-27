@@ -30,7 +30,7 @@ const ServicesCarousel = () => {
 	return (
 		<Carousel
 			responsive={responsive}
-			className="relative rounded-xl  pt-[10px] tablet:px-4 "
+			className="relative rounded-xl    pt-[10px]  "
 		>
 			
 				{services.map((service: IService, i) => {
