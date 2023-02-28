@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 const STEPS_DATA = [
 	{
 		id: 1,
-		desc: 'Escoge uno de los servicios que ofrecen diferentes compañías',
+		desc: 'Escoge uno de los servicios que ofrecemos',
 		icon: 'touch_app',
 	},
 	{
@@ -12,13 +12,13 @@ const STEPS_DATA = [
 	},
 	{
 		id: 3,
-		desc: 'Disfruta el dia de limpieza',
-		icon: 'cleaning_services',
+		desc: 'Paga por Mercado Pago',
+		icon: 'payments',
 	},
 	{
 		id: 4,
-		desc: 'Paga despues de que la limpieza este hecha',
-		icon: 'payments',
+		desc: 'Disfruta el dia de limpieza',
+		icon: 'cleaning_services',
 	},
 	{
 		id: 5,

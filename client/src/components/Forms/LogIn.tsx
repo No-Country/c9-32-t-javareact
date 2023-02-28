@@ -51,7 +51,7 @@ const LogIn = () => {
 			setError({
 				error: true,
 				message: `Error al iniciar sesión ${
-					error?.response?.data?.message || ''
+					error?.response?.data || ''
 				}`,
 			});
 		} finally {

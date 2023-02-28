@@ -25,7 +25,13 @@ function Hero(): ReactElement {
 						, contrata a un limpiador por el tiempo que necesites
 					</p>
 					<div className="flex justify-start md:flex-row flex-col w-full gap-4">
-						<Button classes="hidden md:block">Ver Servicios</Button>
+						<Button
+							classes="hidden md:block"
+							element="a"
+							href="#services"
+						>
+							Ver Servicios
+						</Button>
 						<Button
 							element={Link}
 							to="/login"

@@ -1,8 +1,8 @@
-interface searchBar{
-	placeholder:string
+interface searchBar {
+	placeholder: string;
 }
 
-const SearchBar = ({placeholder}:searchBar) => {
+const SearchBar = ({ placeholder }: searchBar) => {
 	return (
 		<form className="w-full rounded-[300px] overflow-hidden border-2 border-customViolet border-opacity-60">
 			<label
@@ -20,14 +20,13 @@ const SearchBar = ({placeholder}:searchBar) => {
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
-						
 					>
 						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth={2}
 							d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-						></path>
+						/>
 					</svg>
 				</div>
 				<input
@@ -37,7 +36,6 @@ const SearchBar = ({placeholder}:searchBar) => {
 					placeholder={placeholder}
 					required
 				/>
-				
 			</div>
 		</form>
 	);

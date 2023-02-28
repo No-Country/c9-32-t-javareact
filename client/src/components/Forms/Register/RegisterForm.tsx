@@ -65,7 +65,6 @@ const RegisterForm = () => {
 				autoComplete="new-password"
 			>
 				<Input
-					errors={watch('name')}
 					error={Boolean(errors.name)}
 					helperText={errors?.name?.message}
 					placeholder="Nombre"
@@ -80,7 +79,6 @@ const RegisterForm = () => {
 					value={watch('name')}
 				/>
 				<Input
-					errors={watch('email')}
 					error={Boolean(errors.email)}
 					helperText={errors?.email?.message}
 					placeholder="Email"
@@ -95,7 +93,6 @@ const RegisterForm = () => {
 					value={watch('email')}
 				/>
 				<Input
-					errors={watch('password')}
 					error={Boolean(errors.password)}
 					helperText={errors?.password?.message}
 					placeholder="Contraseña"
@@ -110,7 +107,6 @@ const RegisterForm = () => {
 					value={watch('password')}
 				/>
 				<Input
-					errors={watch('address')}
 					error={Boolean(errors.address)}
 					helperText={errors?.address?.message}
 					placeholder="Dirección"
@@ -122,7 +118,6 @@ const RegisterForm = () => {
 				/>
 
 				<Input
-					errors={watch('phoneNumber')}
 					error={Boolean(errors.phoneNumber)}
 					helperText={errors?.phoneNumber?.message}
 					placeholder="Teléfono"

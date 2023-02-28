@@ -69,26 +69,15 @@ const Nav = () => {
 						transition={{ delay: 0.4, duration: 0.4 }}
 					>
 						<ul className="nav-list md:ml-4  w-full">
-							
-									<motion.li
-										onClick={() => setShowNav(false)}
-										className='flex justify-center items-center gap-2  '
-									>
-										 <Location/> 
-										<div
-											className=" nav_link-item hover:scale-100"
-										>
-											{navItems[0]}
-										</div>
-									</motion.li>
-									<motion.li
-										onClick={() => setShowNav(false)}
-										className='flex justify-center items-center gap-2 w-full  '
-									>
-										<SearchBar placeholder={navItems[1]}/>
-									</motion.li>
-									
-								
+							<motion.li
+								onClick={() => setShowNav(false)}
+								className="flex justify-center items-center gap-2  "
+							>
+								<Location />
+								<div className=" nav_link-item hover:scale-100">
+									{navItems[0]}
+								</div>
+							</motion.li>
 						</ul>
 						<div className="flex gap-2  justify-end items-center ">
 							{/* <span className="text-md">{userData?.name}</span> */}

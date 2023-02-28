@@ -12,7 +12,6 @@ function HomePage(): ReactElement {
 			<Hero />
 			<HowWorks />
 			<Services />
-			<Reviews />
 			<FAQ />
 		</>
 	);
