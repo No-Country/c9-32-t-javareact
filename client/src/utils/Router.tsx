@@ -7,6 +7,7 @@ import LandingPage from '@/pages/Landing';
 import NotFound from '@/pages/NotFound';
 import HomePage from '@/pages/Home';
 import ProfilePage from '@/pages/Profile';
+import ServiceSelection from '@/pages/ServiceSelection';
 
 function Router() {
 	return (
@@ -23,6 +24,10 @@ function Router() {
 					<Route path="/" element={<UserLayout />}>
 						<Route path="home" element={<HomePage />} />
 						<Route path="profile" element={<ProfilePage />} />
+						<Route
+							path="service-selection"
+							element={<ServiceSelection />}
+						/>
 					</Route>
 
 					<Route path="/admin" element={<UserLayout />}>

@@ -30,7 +30,7 @@ const Nav = () => {
 	}, [showNav]);
 
 	useEffect(() => {
-		userLocation && handleGetUserLocation();
+		handleGetUserLocation();
 	}, []);
 
 	const handleGetUserLocation = async () => {
@@ -99,7 +99,7 @@ const Nav = () => {
 						<div className="flex gap-2 flex-col md:flex-row justify-end items-center">
 							<div className="bg-gray-200 rounded-xl py-1 px-3 flex flex-row items-center gap-1 h-13">
 								<span className="text-sm">
-									{userData?.name}Antonio
+									{userData?.name}
 								</span>
 
 								<Link

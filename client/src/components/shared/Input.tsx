@@ -6,7 +6,7 @@ interface InputProps extends ComponentProps<'input'> {
 	error?: boolean | undefined;
 	helperText?: string | undefined;
 	value?: string | undefined | number;
-	register: any;
+	register?: any;
 }
 
 const inputClasses = {
@@ -40,7 +40,9 @@ function Input({
 				{...register}
 				id={props.id ?? props.name}
 				{...props}
-				className={inputClasses.input}
+				className={`${inputClasses.input} ${
+					!value && 'text-transparent focus-within:text-black'
+				}`}
 			/>
 			{helperText && (
 				<span className={`text-xs ${error && 'text-red-500'}`}>

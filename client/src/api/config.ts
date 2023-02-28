@@ -1,8 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 import { AuthVerify, getToken } from '@api/auth';
 
-// swagger https://c9-32-t-javareact-production.up.railway.app/swagger-ui/index.html
-const BASE_URL = 'https://c9-32-t-javareact-production.up.railway.app/api/v1';
+// swagger https://jealous-flavor-production.up.railway.app/swagger-ui/index.html
+const BASE_URL = 'https://jealous-flavor-production.up.railway.app/api/v1';
 
 export const axiosInstance: AxiosInstance = axios.create({
 	baseURL: BASE_URL,

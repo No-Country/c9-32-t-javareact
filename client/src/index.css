@@ -44,6 +44,9 @@
 	.button {
 		@apply text-sm uppercase rounded-full text-center cursor-pointer  px-8 py-2 pt-3 hover:scale-95 duration-100 font-semibold;
 	}
+	.radio-button-label {
+		@apply block cursor-pointer select-none rounded-full p-2 text-center border-2 border-royalBlue peer-checked:bg-royalBlue peer-checked:text-white;
+	}
 	.center-absolute {
 		@apply absolute left-[50%] right-[50%] -translate-x-[50%];
 	}
