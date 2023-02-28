@@ -135,4 +135,11 @@
 	.terms-bold {
 		@apply font-bold;
 	}
+
+
+
+	/* PAYMENT */
+	.payment-label{
+		@apply opacity-60 text-customViolet
+	}
 }
