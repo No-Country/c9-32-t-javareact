@@ -39,7 +39,7 @@
 		@apply sm:text-4xl text-3xl font-bold;
 	}
 	.heading3 {
-		@apply sm:text-3xl text-2xl font-bold;
+		@apply sm:text-3xl text-2xl font-bold pb-3;
 	}
 	.button {
 		@apply text-sm uppercase rounded-full text-center cursor-pointer  px-8 py-2 pt-3 hover:scale-95 duration-100 font-semibold;

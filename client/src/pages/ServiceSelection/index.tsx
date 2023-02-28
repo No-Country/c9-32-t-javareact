@@ -2,6 +2,7 @@ import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
 import { useGlobalData } from '@context/GlobalContext';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 type FormValues = {
 	direction: string;
@@ -119,7 +120,8 @@ function ServiceSelection() {
 				</div>
 
 				<hr />
-				<Button type="submit">Continua con la compra</Button>
+				<Link className='button bg-customViolet w-fit mx-auto text-white' to='/payment' type="submit">Continua con la compra</Link>
+				
 			</form>
 		</section>
 	);

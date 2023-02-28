@@ -8,6 +8,7 @@ import NotFound from '@/pages/NotFound';
 import HomePage from '@/pages/Home';
 import ProfilePage from '@/pages/Profile';
 import ServiceSelection from '@/pages/ServiceSelection';
+import Payment from '@/pages/Payment/Payment';
 
 function Router() {
 	return (
@@ -27,6 +28,10 @@ function Router() {
 						<Route
 							path="service-selection"
 							element={<ServiceSelection />}
+						/>
+						<Route
+							path="payment"
+							element={<Payment />}
 						/>
 					</Route>
 
