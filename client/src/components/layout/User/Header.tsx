@@ -1,19 +1,20 @@
-import Bars from '@/components/icons/Bars';
-import { Close } from '@/components/icons/Close';
-import { Button } from '@/components/shared/Button';
+import Bars from '@components/icons/Bars';
+import { Close } from '@components/icons/Close';
+import { Button } from '@components/shared/Button';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@hooks/useMediaQuery';
 import { useGlobalData } from '@context/GlobalContext';
-import { deleteToken } from '@/api/auth';
-import Location from '@/components/icons/Location';
-import SearchBar from '@/components/shared/SearchBar';
+import { deleteToken } from '@api/auth';
+import Location from '@components/icons/Location';
+import { getUserLocation, getUserLocationName } from '@/utils/helpers';
 
 const Nav = () => {
 	const navigate = useNavigate();
 	const [showNav, setShowNav] = useState<boolean>(false);
-	const { userData, userImg, deleteUserData } = useGlobalData();
+	const { userData, userImg, userLocation, setUserLocation, deleteUserData } =
+		useGlobalData();
 
 	const navItems = [
 		'132 Joe St Apt 3 Stockton CA 20500',
@@ -27,6 +28,19 @@ const Nav = () => {
 			? (document.body.style.overflow = 'hidden')
 			: (document.body.style.overflow = 'scroll');
 	}, [showNav]);
+
+	useEffect(() => {
+		userLocation && handleGetUserLocation();
+	}, []);
+
+	const handleGetUserLocation = async () => {
+		try {
+			const response = await getUserLocation();
+			setUserLocation(response.data.results[0]?.formatted_address);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const variants = !isSmall && {
 		open: { opeacity: 0, x: 0 },
@@ -70,45 +84,51 @@ const Nav = () => {
 					>
 						<ul className="nav-list md:ml-4  w-full">
 							<motion.li
-								onClick={() => setShowNav(false)}
-								className="flex justify-center items-center gap-2  "
+								onClick={() => {
+									setShowNav(false);
+									handleGetUserLocation();
+								}}
+								className="flex justify-center items-center gap-2  cursor-pointer"
 							>
 								<Location />
-								<div className=" nav_link-item hover:scale-100">
-									{navItems[0]}
+								<div className=" nav_link-item hover:scale-100 text-xs">
+									{userLocation}
 								</div>
 							</motion.li>
 						</ul>
-						<div className="flex gap-2  justify-end items-center ">
-							{/* <span className="text-md">{userData?.name}</span> */}
-							<div className=" flex justify-center items-center w-10 h-10">
-								<i className="material-icons-outlined text-customViolet  ">
-									notifications
-								</i>
+						<div className="flex gap-2 flex-col md:flex-row justify-end items-center">
+							<div className="bg-gray-200 rounded-xl py-1 px-3 flex flex-row items-center gap-1 h-13">
+								<span className="text-sm">
+									{userData?.name}Antonio
+								</span>
+
+								<Link
+									to="/profile"
+									className="bg-royalBlue rounded-full  w-8 h-8 overflow-hidden"
+								>
+									<img
+										src={
+											userImg?.url ||
+											/* 'https://via.placeholder.com/150' */
+											'https://dummyimage.com/150x150/2463EB/fff'
+										}
+										alt="user Img"
+										className="w-full h-full object-cover"
+									/>
+								</Link>
 							</div>
-							<Link
-								to="/profile"
-								className="bg-royalBlue rounded-full  w-12 h-12 overflow-hidden"
-							>
-								<img
-									src={
-										userImg?.url ||
-										'https://via.placeholder.com/150'
-									}
-									alt="user Img"
-									className="w-full h-full object-cover"
-								/>
-							</Link>
-							{/* <button
-								className="flex justify-center items-center text-sm"
+
+							<button
+								className="flex justify-center items-center text-sm 
+								rounded-xl py-1 px-3 h-13 text-red-500 bg-gray-200 md:bg-transparent"
 								title="cerrar sesión"
 								onClick={logout}
 							>
-								<i className="material-icons-outlined  mr-0">
+								Salir
+								<i className="material-icons-outlined  ml-1 text-lg ">
 									logout
 								</i>
-								Salir
-							</button> */}
+							</button>
 						</div>
 					</motion.div>
 				</motion.nav>

@@ -13,6 +13,8 @@ type GlobalContextType = {
 	>;
 	deleteUserData: () => void;
 	fetchUserData: () => void;
+	userLocation: string;
+	setUserLocation: React.Dispatch<React.SetStateAction<string>>;
 };
 const globalContextInitailState = {
 	userData: null,
@@ -21,6 +23,8 @@ const globalContextInitailState = {
 	userImg: { url: '', file: null },
 	setUserImg: () => {},
 	fetchUserData: () => {},
+	userLocation: '',
+	setUserLocation: () => {},
 };
 const GlobalContext = createContext<GlobalContextType>(
 	globalContextInitailState,
@@ -43,6 +47,7 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 		credentialsNonExpired: true,
 	});
 	const [userImg, setUserImg] = useState({ url: '', file: null });
+	const [userLocation, setUserLocation] = useState('');
 
 	const deleteUserData = () => {
 		setUserData({
@@ -78,6 +83,8 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 				setUserImg,
 				deleteUserData,
 				fetchUserData,
+				userLocation,
+				setUserLocation,
 			}}
 		>
 			{children}
