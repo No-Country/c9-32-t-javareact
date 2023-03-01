@@ -31,11 +31,14 @@ axiosInstance.interceptors.response.use(
 	(error) => {
 		if (error && error.response.status === 401) {
 			console.log('Error 401 falta autenticación');
+			alert('401 falta autenticación');
+
 			window.location.replace('/login');
 			return Promise.reject(error);
 		}
 		if (error && error.response.status === 403) {
 			console.log('Error 403 No autorizado');
+			alert('403  No autorizado');
 			window.location.replace('/login');
 			return Promise.reject(error);
 		}
