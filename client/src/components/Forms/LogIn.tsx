@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { EyeClosed, EyeOpen } from '../icons';
-import hero_img from '@assets/banner.png';
+import hero_img from '@assets/login_banner.png';
 import Input from '@components/shared/Input';
 import { Label } from '../shared/Label';
 import Header from './Register/Header';
@@ -130,12 +130,14 @@ const LogIn = () => {
 						</Link>
 					</p>
 				</div>
-				<div className="w-1/3 hidden lg:inline">
-					<img
-						className="object-cover object-center rounded w-full"
-						alt="hero"
-						src={hero_img}
-					/>
+				<div className="w-2/5 hidden lg:inline">
+					<div className="bg-royalBlue rounded-full  overflow-hidden  w-full aspect-square p-12">
+						<img
+							className="object-cover object-top  rounded-b-full"
+							alt="hero"
+							src={hero_img}
+						/>
+					</div>
 				</div>
 			</main>
 		</>
