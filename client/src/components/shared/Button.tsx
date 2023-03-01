@@ -31,7 +31,7 @@ export const Button = (props: buttonProps) => {
 			{...rest}
 			className={`button ${buttonVariantStyles[variant]} ${classes}`}
 		>
-			<span>{children}</span>
+			<div>{children}</div>
 		</CustomButton>
 	);
 };
