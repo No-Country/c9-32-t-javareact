@@ -1,15 +1,43 @@
-import React from 'react';
+import { useGlobalData } from '@/context/GlobalContext';
+import { getUserSchedule } from '@api/service-schedule';
+import { useEffect, useState } from 'react';
+import empty from '@assets/empty.png';
 
 function MyOrders() {
+	const { userData } = useGlobalData();
+	const [orders, setOrders] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				if (userData?.id) {
+					const response = await getUserSchedule(userData?.id);
+					console.log(response);
+					setOrders(response.data);
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	}, [userData]);
+
 	return (
 		<section className="my-12 " id="orders">
 			<h3 className="heading3 ">Mis Pedidos</h3>
 			<div className="mt-10">
+				{orders.length === 0 && (
+					<div className=" ">
+						<img src={empty} alt="empty" className="mx-auto w-32" />
+						<p className="text-center text-xs mt-2 text-gray-400">
+							Aún no has hecho ninguna compra
+						</p>
+					</div>
+				)}
+
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
-					<OrderCard />
-					<OrderCard />
-					<OrderCard />
-					<OrderCard />
+					{orders.map((order) => (
+						<OrderCard order={order} />
+					))}
 				</div>
 			</div>
 		</section>
@@ -17,22 +45,25 @@ function MyOrders() {
 }
 
 function OrderCard({ order }: any) {
+	const {
+		servType: { type },
+		id,
+		programDate,
+		direction,
+		status,
+	} = order;
 	return (
 		<div className="p-5  border-royalBlue border-dashed border-[1px] rounded-2xl  flex flex-col gap-4 bg-white">
 			<div className="flex flex-wrap justify-between items-center  gap-4">
-				<span className="flex-grow text-sm">Hogar</span>
-				<span className="text-gray-500 text-xs">
-					11 de Diciembre 2022
-				</span>
+				<span className="flex-grow text-sm">{type}</span>
+				<span className="text-gray-500 text-xs">{programDate}</span>
 			</div>
 
 			<div className="h-full ">
-				<p className=" text-sm">
-					132 Joe St Apt 3 Stockton CA 20500, USA
-				</p>
+				<p className=" text-sm">{direction}</p>
 
 				<span className="inline-block h-1 w-full rounded bg-yellow-500  " />
-				<p className=" text-xs">Status: Pendiente</p>
+				<p className=" text-xs">Status: {status}</p>
 			</div>
 		</div>
 	);

@@ -30,18 +30,17 @@ function ServiceSelection() {
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h3 className="heading3 my-4">Limpieza de hogar</h3>
-			<p className=" text-sm">
-				Nos especializamos en limpiar y organizar meticulosamente su
-				hogar. Incluye tareas como quitar el polvo, aspirar, barrer,
-				trapear, limpiar superficies y limpiar muebles y accesorios.
-			</p>
-			<hr />
-
 			<form
 				className="flex flex-col gap-4 w-full lg:w-1/2 mx-auto"
 				onSubmit={handleSubmit(onSubmit)}
 			>
+				<h3 className="heading3 my-4">Limpieza de hogar</h3>
+				<p className=" text-sm">
+					Nos especializamos en limpiar y organizar meticulosamente su
+					hogar. Incluye tareas como quitar el polvo, aspirar, barrer,
+					trapear, limpiar superficies y limpiar muebles y accesorios.
+				</p>
+				<hr className="border-gray-400 my-4" />
 				<Input
 					error={Boolean(errors.direction)}
 					helperText={errors?.direction?.message}
