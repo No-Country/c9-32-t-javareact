@@ -120,8 +120,14 @@ function ServiceSelection() {
 				</div>
 
 				<hr />
-				<Link className='button bg-customViolet w-fit mx-auto text-white' to='/payment' type="submit">Continua con la compra</Link>
-				
+				<Button
+					element={Link}
+					className="  w-fit"
+					to="/payment"
+					type="submit"
+				>
+					Continua con la compra
+				</Button>
 			</form>
 		</section>
 	);

@@ -109,7 +109,9 @@ const LogIn = () => {
 						>
 							¿Olvidaste tu contraseña?
 						</Link>
-						{!isLoading && (
+						{isLoading ? (
+							<div className="lds-dual-ring " />
+						) : (
 							<Button type="submit" classes="w-full capitalize">
 								Iniciar Sesión
 							</Button>

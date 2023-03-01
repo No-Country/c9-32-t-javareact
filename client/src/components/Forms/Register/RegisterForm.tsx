@@ -127,7 +127,9 @@ const RegisterForm = () => {
 					})}
 					value={watch('phoneNumber')}
 				/>
-				{!isLoading && (
+				{isLoading ? (
+					<div className="lds-dual-ring " />
+				) : (
 					<Button type="submit" classes="w-full capitalize">
 						Registrarse
 					</Button>
