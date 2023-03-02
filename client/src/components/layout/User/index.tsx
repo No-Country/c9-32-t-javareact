@@ -4,16 +4,17 @@ import Header from './Header';
 import { useGlobalData } from '@context/GlobalContext';
 
 function UserLayout() {
-	const { fetchUserData } = useGlobalData();
+	const { fetchUserData, fetchServTypes, userData } = useGlobalData();
 	useEffect(() => {
 		fetchUserData();
+		fetchServTypes();
 	}, []);
 
 	return (
 		<>
 			<Header />
 			<main className="flex-auto  container">
-				<Outlet />
+				{userData?.id ? <Outlet /> : <div className="lds-dual-ring " />}
 			</main>
 		</>
 	);

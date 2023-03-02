@@ -43,3 +43,17 @@ export interface IService {
 	description: string;
 	alt: string;
 }
+export interface GlobalContextType {
+	userData: IUser | null;
+	setUserData: React.Dispatch<React.SetStateAction<IUser>>;
+	userImg: { url: string; file: any } | undefined;
+	setUserImg: React.Dispatch<
+		React.SetStateAction<{ url: string; file: any }>
+	>;
+	deleteUserData: () => void;
+	fetchUserData: () => void;
+	userLocation: string;
+	setUserLocation: React.Dispatch<React.SetStateAction<string>>;
+	servTypes: object[];
+	fetchServTypes: () => void;
+}

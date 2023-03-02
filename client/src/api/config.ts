@@ -14,9 +14,16 @@ export const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
 	(config) => {
+		console.log('token Valido->', AuthVerify());
 		if (AuthVerify()) {
-			config.headers.Authorization = `Bearer ${getToken()}`;
+			const token = getToken();
+			/* axiosInstance.defaults.headers.common[
+				'Authorization'
+			] = `Bearer ${token}`; */
+			//config.headers['Authorization'] = `Bearer ${token}`;
+			return config;
 		}
+		config.headers['Authorization'] = null;
 		return config;
 	},
 	(error) => {
@@ -44,7 +51,7 @@ axiosInstance.interceptors.response.use(
 		}
 		if (error && error.response.status === 404) {
 			console.log('Recurso no encontrado');
-			alert('404 Recurso no encontrado');
+			/* alert('404 Recurso no encontrado'); */
 			return Promise.reject(error);
 		}
 		console.log(error.response);

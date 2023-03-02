@@ -1,22 +1,11 @@
 import { createContext, ReactElement, useContext, useState } from 'react';
 
-import { IGlobalContext, IUser } from '@types';
+import { IGlobalContext, IUser, GlobalContextType } from '@types';
 import { getMyUserData, getUserImage } from '@/api/user';
 import { AuthVerify } from '@/api/auth';
+import { getServicesTypes } from '@/api/servicesType';
 
-type GlobalContextType = {
-	userData: IUser | null;
-	setUserData: React.Dispatch<React.SetStateAction<IUser>>;
-	userImg: { url: string; file: any } | undefined;
-	setUserImg: React.Dispatch<
-		React.SetStateAction<{ url: string; file: any }>
-	>;
-	deleteUserData: () => void;
-	fetchUserData: () => void;
-	userLocation: string;
-	setUserLocation: React.Dispatch<React.SetStateAction<string>>;
-};
-const globalContextInitailState = {
+const globalContextInitialState = {
 	userData: null,
 	setUserData: () => {},
 	deleteUserData: () => {},
@@ -25,9 +14,11 @@ const globalContextInitailState = {
 	fetchUserData: () => {},
 	userLocation: '',
 	setUserLocation: () => {},
+	servTypes: [],
+	fetchServTypes: () => {},
 };
 const GlobalContext = createContext<GlobalContextType>(
-	globalContextInitailState,
+	globalContextInitialState,
 );
 
 function useGlobalData() {
@@ -48,6 +39,7 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 	});
 	const [userImg, setUserImg] = useState({ url: '', file: null });
 	const [userLocation, setUserLocation] = useState('');
+	const [servTypes, setServType] = useState([]);
 
 	const deleteUserData = () => {
 		setUserData({
@@ -64,12 +56,21 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 	};
 	const fetchUserData = async () => {
 		try {
-			console.log('token Valido->', AuthVerify());
 			const response = await getMyUserData();
+			console.log(response);
 			setUserData(response.data);
 			const userImg = await getUserImage(response.data.id);
 			setUserImg(userImg);
 		} catch (error) {
+			console.log(error);
+		}
+	};
+	const fetchServTypes = async () => {
+		const response = await getServicesTypes();
+		setServType(response.data);
+
+		try {
+		} catch (error: any) {
 			console.log(error);
 		}
 	};
@@ -85,6 +86,8 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 				fetchUserData,
 				userLocation,
 				setUserLocation,
+				servTypes,
+				fetchServTypes,
 			}}
 		>
 			{children}

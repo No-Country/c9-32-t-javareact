@@ -1,4 +1,6 @@
 import { useGlobalData } from '@/context/GlobalContext';
+import moment from 'moment';
+
 import { getUserSchedule } from '@api/service-schedule';
 import { useEffect, useState } from 'react';
 import empty from '@assets/empty.png';
@@ -6,7 +8,6 @@ import empty from '@assets/empty.png';
 function MyOrders() {
 	const { userData } = useGlobalData();
 	const [orders, setOrders] = useState([]);
-
 	useEffect(() => {
 		(async () => {
 			try {
@@ -35,8 +36,8 @@ function MyOrders() {
 				)}
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
-					{orders.map((order) => (
-						<OrderCard order={order} />
+					{orders.map((order: any) => (
+						<OrderCard order={order} key={order.id} />
 					))}
 				</div>
 			</div>
@@ -45,18 +46,18 @@ function MyOrders() {
 }
 
 function OrderCard({ order }: any) {
-	const {
-		servType: { type },
-		id,
-		programDate,
-		direction,
-		status,
-	} = order;
+	const { id, programDate, direction, status, typeId } = order;
+	const { servTypes } = useGlobalData();
+	const service: any = servTypes.find((serv: any) => serv.id == typeId);
 	return (
 		<div className="p-5  border-royalBlue border-dashed border-[1px] rounded-2xl  flex flex-col gap-4 bg-white">
 			<div className="flex flex-wrap justify-between items-center  gap-4">
-				<span className="flex-grow text-sm">{type}</span>
-				<span className="text-gray-500 text-xs">{programDate}</span>
+				<span className="flex-grow text-sm">
+					{service?.type || 'Servicio'}
+				</span>
+				<span className="text-gray-500 text-xs">
+					{moment(programDate).format('LL')}
+				</span>
 			</div>
 
 			<div className="h-full ">

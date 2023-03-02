@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import data from '@/utils/data.json';
 import { IService } from '@/types';
+import { useGlobalData } from '@context/GlobalContext';
 
 function Services() {
-	const services = data.services;
+	const { servTypes } = useGlobalData();
 
 	return (
 		<section className="my-6" id="orders">
@@ -11,10 +12,10 @@ function Services() {
 			<p>Selecciona el servicio que quieras solicitar</p>
 			<div className="mt-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
-					{services.map((service: IService) => {
+					{servTypes.map((service: any) => {
 						return (
 							<ServiceCard
-								key={service.serviceType}
+								key={service.id}
 								serviceData={service}
 							/>
 						);
@@ -25,22 +26,30 @@ function Services() {
 	);
 }
 
-function ServiceCard({ serviceData }: { serviceData: IService }) {
+function ServiceCard({ serviceData }: any) {
 	const navigate = useNavigate();
-	const { src, alt, serviceType, description } = serviceData;
+	const { type, desc } = serviceData;
+	const serviceLocal = data.services.find(
+		(service) => service.serviceType === type,
+	);
+
 	return (
 		<article
-			title={`Solicitar Servicio de ${serviceType}`}
+			title={`Solicitar Servicio de ${type}`}
 			className=" group border border-royalBlue border-dashed rounded-xl overflow-hidden
 			cursor-pointer bg-white hover:bg-royalBlue-400 hover:text-white transition "
 			onClick={() => navigate('/service-selection')}
 		>
-			<img className="h-32 w-full object-cover" src={src} alt={alt} />
+			<img
+				className="h-32 w-full object-cover"
+				src={serviceLocal?.src}
+				alt={type}
+			/>
 
 			<div className="p-3 ">
-				<h4 className="  ">{serviceType}</h4>
+				<h4 className="  ">{type}</h4>
 				<p className="text-xs text-gray-500 group-hover:text-white  ">
-					{description}
+					{desc}
 				</p>
 			</div>
 		</article>

@@ -1,7 +1,7 @@
 import axios from './config';
 import { ICleanService } from '@/types';
 
-export function getServiceTypess() {
+export function getServicesTypes() {
 	return axios.get(`/serv-type`);
 }
 
