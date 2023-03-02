@@ -10,34 +10,33 @@ const Payment = () => {
 	return (
 		<div className="w-full flex flex-col justify-center items-center gap-5 mt-10 mb-10  lg:flex-row-reverse lg:gap-20">
 			<Summary />
-			<div className='w-full'>
-			<PurchaseDetail />
-			<PayMethod />
-			<BillingInformation />
-			<div className="flex gap-2 mb-5">
-				<input className="w-8" type="checkbox" name="" id="" />
-				<p className="text-xs">
-					Guarda mi información de pago para que sea más facil hacer
-					la compra la próxima vez
-				</p>
-			</div>
+			<div className="w-full">
+				{/* <PayMethod /> */}
+				<BillingInformation />
+				<div className="flex gap-2 mb-5">
+					<input className="w-8" type="checkbox" name="" id="" />
+					<p className="text-xs">
+						Guarda mi información de pago para que sea más facil
+						hacer la compra la próxima vez
+					</p>
+				</div>
+				<PurchaseDetail />
 
-			<Button
-				element={Link}
-				classes="w-full flex justify-between items-center "
-				to="/checkout"
-				type="submit"
-			>
-				<span>Confirmar compra</span>
-				<span className=" ml-2 flex items-center">
-					$16.000
-					<i className="material-icons text-2xl  text-white ml-2">
-						chevron_right
-					</i>
-				</span>
-			</Button>
+				{/* <Button
+					element={Link}
+					classes="w-full flex justify-between items-center "
+					to="/checkout"
+					type="submit"
+				>
+					<span>Confirmar compra</span>
+					<span className=" ml-2 flex items-center">
+						$16.000
+						<i className="material-icons text-2xl  text-white ml-2">
+							chevron_right
+						</i>
+					</span>
+				</Button> */}
 			</div>
-			
 		</div>
 	);
 };
