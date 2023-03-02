@@ -7,6 +7,7 @@ interface InputProps extends ComponentProps<'input'> {
 	helperText?: string | undefined;
 	value?: string | undefined | number;
 	register?: any;
+	options?:string[]
 }
 
 const inputClasses = {
@@ -44,6 +45,7 @@ function Input({
 					!value && 'text-transparent focus-within:text-black'
 				}`}
 			/>
+			
 			{helperText && (
 				<span className={`text-xs ${error && 'text-red-500'}`}>
 					{helperText}

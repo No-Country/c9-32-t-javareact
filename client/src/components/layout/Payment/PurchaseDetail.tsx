@@ -34,7 +34,7 @@ const PurchaseDetail = () => {
     <div className="w-full">
       <h2 className="heading3 text-center ">Detalle de la compra</h2>
       <form
-				className="flex flex-col gap-4 w-full lg:w-1/2 mx-auto"
+				className="flex flex-col gap-4 w-full mx-auto"
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<Input

@@ -1,6 +1,6 @@
 const Summary = () => {
   return (
-    <div className="w-full divide-y-[1px]">
+    <div className="w-full divide-y-[1px] lg:self-start ">
       <h2 className="heading3 text-center">Resumen de compra</h2>
       <div className="flex flex-col  w-full  p-3">
         <span className="payment-label">Servicio</span>

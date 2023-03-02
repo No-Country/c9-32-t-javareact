@@ -10,6 +10,7 @@ type FormValues = {
 	direction: string;
 	programDate: string;
 	time: string;
+	tamaño:string
 };
 function ServiceSelection() {
 	const navigator = useNavigate();

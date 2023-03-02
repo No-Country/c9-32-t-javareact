@@ -8,12 +8,13 @@ import { Link } from 'react-router-dom';
 
 const Payment = () => {
 	return (
-		<div className="w-full flex flex-col justify-center items-center gap-5 mt-10 mb-10 ">
+		<div className="w-full flex flex-col justify-center items-center gap-5 mt-10 mb-10  lg:flex-row-reverse lg:gap-20">
 			<Summary />
+			<div className='w-full'>
 			<PurchaseDetail />
 			<PayMethod />
 			<BillingInformation />
-			<div className="flex gap-2">
+			<div className="flex gap-2 mb-5">
 				<input className="w-8" type="checkbox" name="" id="" />
 				<p className="text-xs">
 					Guarda mi información de pago para que sea más facil hacer
@@ -35,6 +36,8 @@ const Payment = () => {
 					</i>
 				</span>
 			</Button>
+			</div>
+			
 		</div>
 	);
 };
