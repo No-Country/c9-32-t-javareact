@@ -30,9 +30,10 @@ function Router() {
 							element={<ServiceSelection />}
 						/>
 						<Route
-							path="payment"
-							element={<Payment />}
+							path="service-selection/:serviceType"
+							element={<ServiceSelection />}
 						/>
+						<Route path="payment" element={<Payment />} />
 					</Route>
 
 					<Route path="/admin" element={<UserLayout />}>

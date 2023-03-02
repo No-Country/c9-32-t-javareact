@@ -2,7 +2,8 @@ import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
 import { useGlobalData } from '@context/GlobalContext';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { createUserSchedule } from '@api/service-schedule';
 
 type FormValues = {
 	direction: string;
@@ -10,7 +11,9 @@ type FormValues = {
 	time: string;
 };
 function ServiceSelection() {
-	const { userLocation } = useGlobalData();
+	const navigator = useNavigate();
+	const { userLocation, userData } = useGlobalData();
+	const { serviceType = 'Hogar' } = useParams();
 	const {
 		register,
 		reset,
@@ -24,8 +27,24 @@ function ServiceSelection() {
 		},
 	});
 
-	function onSubmit(data: any) {
+	async function onSubmit(data: any) {
 		console.log(data);
+		try {
+			const payload = {
+				...data,
+				servType: {
+					type: serviceType,
+				},
+				user: {
+					email: userData?.email,
+				},
+			};
+			const response = await createUserSchedule(payload);
+			console.log(response);
+		} catch (error) {
+			console.log(error);
+		}
+		navigator('/payment');
 	}
 
 	return (
@@ -34,7 +53,7 @@ function ServiceSelection() {
 				className="flex flex-col gap-4 w-full lg:w-1/2 mx-auto"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<h3 className="heading3 my-4">Limpieza de hogar</h3>
+				<h3 className="heading3 my-4">Servicio de {serviceType}</h3>
 				<p className=" text-sm">
 					Nos especializamos en limpiar y organizar meticulosamente su
 					hogar. Incluye tareas como quitar el polvo, aspirar, barrer,
@@ -64,7 +83,7 @@ function ServiceSelection() {
 					value={watch('programDate')}
 				/>
 
-				<div
+				{/* <div
 					className="flex flex-row p-2 gap-2 justify-center flex-wrap"
 					x-data="app"
 				>
@@ -116,15 +135,10 @@ function ServiceSelection() {
 							Noche(de 18 a 22 hs)
 						</label>
 					</div>
-				</div>
+				</div> */}
 
 				<hr />
-				<Button
-					element={Link}
-					className="  w-fit"
-					to="/payment"
-					type="submit"
-				>
+				<Button className="  w-fit" type="submit">
 					Continua con la compra
 				</Button>
 			</form>

@@ -38,7 +38,7 @@ function ServiceCard({ serviceData }: any) {
 			title={`Solicitar Servicio de ${type}`}
 			className=" group border border-royalBlue border-dashed rounded-xl overflow-hidden
 			cursor-pointer bg-white hover:bg-royalBlue-400 hover:text-white transition "
-			onClick={() => navigate('/service-selection')}
+			onClick={() => navigate(`/service-selection/${type}`)}
 		>
 			<img
 				className="h-32 w-full object-cover"
