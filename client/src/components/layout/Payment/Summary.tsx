@@ -1,4 +1,10 @@
+import { GlobalContext } from '@/context/GlobalContext';
+import {  useContext } from 'react';
+
+
 const Summary = () => {
+
+
   return (
     <div className="w-full divide-y-[1px] lg:self-start ">
       <h2 className="heading3 text-center">Resumen de compra</h2>
@@ -12,7 +18,7 @@ const Summary = () => {
       </div>
       <div className="flex flex-col  w-full  p-3">
         <span className="opacity-60 text-customViolet">Tamaño de tu hogar</span>
-        <span>Mediano (100m²)</span>
+        <span>Mediano(100m²)</span>
       </div>
       <div className="flex flex-col  w-full  p-3">
         <span className="opacity-60 text-customViolet">Turno para la limpieza</span>
@@ -20,7 +26,7 @@ const Summary = () => {
       </div>
       <div className="flex flex-col  w-full  p-3">
         <span className="opacity-60 text-customViolet">Frecuencia de limpieza</span>
-        <span>Todos los días</span>
+        <span>Todos los días </span>
       </div>
       <div className="flex flex-col  w-full  p-3">
         <span className="opacity-60 text-customViolet">Total a pagar - Servicio mensual</span>

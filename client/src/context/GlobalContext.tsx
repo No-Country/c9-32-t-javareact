@@ -16,6 +16,7 @@ const globalContextInitialState = {
 	setUserLocation: () => {},
 	servTypes: [],
 	fetchServTypes: () => {},
+
 };
 const GlobalContext = createContext<GlobalContextType>(
 	globalContextInitialState,
@@ -75,6 +76,8 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 		}
 	};
 
+	
+
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -88,6 +91,7 @@ function GlobalProvider({ children }: IGlobalContext): ReactElement {
 				setUserLocation,
 				servTypes,
 				fetchServTypes,
+				
 			}}
 		>
 			{children}

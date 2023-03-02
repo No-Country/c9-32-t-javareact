@@ -56,4 +56,6 @@ export interface GlobalContextType {
 	setUserLocation: React.Dispatch<React.SetStateAction<string>>;
 	servTypes: object[];
 	fetchServTypes: () => void;
+	
 }
+

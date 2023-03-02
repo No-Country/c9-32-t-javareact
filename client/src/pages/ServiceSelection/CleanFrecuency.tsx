@@ -1,4 +1,10 @@
+import { ServiceToggleButton } from "@/components/shared/serviceToggleButton";
+import { GlobalContext } from "@/context/GlobalContext";
+import { useState, useContext } from 'react';
+
 const CleanFrecuency = () => {
+
+
 	return (
 		<div className="clean-container">
 			<h4 className="clean-title">
@@ -7,15 +13,21 @@ const CleanFrecuency = () => {
 			<p className="text-gray-600">
 				Puedes optar por una limpieza única o una limpieza programada
 			</p>
-			<button>Limpieza única</button>
+		
+      <ServiceToggleButton text={'Limpieza única'}/>
+
 			<div className="flex gap-4 w-full justify-center items-center">
 				<span className="line"></span>
 				<span>O</span>
-        <span className="line"></span>
+				<span className="line"></span>
 			</div>
-      <button className="button-custom">2 veces por semana</button>
-      <button className="button-custom">3 veces por semana</button>
-      <button className="button-custom">Todos los días</button>
+			<div className="clean-container lg:flex-row">
+				
+        <ServiceToggleButton text={'2 veces por semana'} />
+        <ServiceToggleButton text={'3 veces por semana'} />
+        <ServiceToggleButton text={'Todos los días'} />
+
+			</div>
 		</div>
 	);
 };
