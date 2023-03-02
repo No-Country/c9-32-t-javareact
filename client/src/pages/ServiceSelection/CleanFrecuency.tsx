@@ -3,7 +3,8 @@ import { GlobalContext } from "@/context/GlobalContext";
 import { useState, useContext } from 'react';
 
 const CleanFrecuency = () => {
-
+	const infoArray = ['2 veces por semana', '3 veces por semana', 'Todos los días'];
+	const [selected, setSelected] = useState(infoArray[0]);
 
 	return (
 		<div className="clean-container">
@@ -14,7 +15,16 @@ const CleanFrecuency = () => {
 				Puedes optar por una limpieza única o una limpieza programada
 			</p>
 		
-      <ServiceToggleButton text={'Limpieza única'}/>
+      <div
+          onClick={() => setSelected('Limpieza única')}
+          className={`button-custom mb-2 ${
+            selected === 'Limpieza única' &&
+            'bg-customViolet text-white'
+          }`}
+        >
+          {' '}
+         Limpieza única
+        </div>
 
 			<div className="flex gap-4 w-full justify-center items-center">
 				<span className="line"></span>
@@ -23,9 +33,19 @@ const CleanFrecuency = () => {
 			</div>
 			<div className="clean-container lg:flex-row">
 				
-        <ServiceToggleButton text={'2 veces por semana'} />
-        <ServiceToggleButton text={'3 veces por semana'} />
-        <ServiceToggleButton text={'Todos los días'} />
+      {infoArray.map((item) => {
+					return <div
+          onClick={() => setSelected(item)}
+          className={`button-custom mb-2 ${
+            selected === item &&
+            'bg-customViolet text-white'
+          }`}
+        >
+          {' '}
+          {item}
+        </div>;;
+				})}
+     
 
 			</div>
 		</div>

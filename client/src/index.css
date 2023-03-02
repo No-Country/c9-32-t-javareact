@@ -54,9 +54,7 @@
 	.text {
 		@apply text-gray-300 font-[300] leading-[27px];
 	}
-	.button-custom{
-		@apply w-full bg-white  hover:bg-customViolet text-center text-customViolet hover:text-white border-2 rounded-full py-[8px] font-bold border-customViolet max-w-[200px] lg:text-sm cursor-pointer
-	}
+	
 	/* HEADER */
 
 	nav {
@@ -178,15 +176,21 @@
 
 		/* CLEAN SERVICE */
 		.clean-container{
-			@apply w-full flex flex-col justify-center items-center text-center gap-3
+			@apply w-full flex flex-col justify-center items-center text-center gap-3 
 		}
 		.clean-title{
-			@apply  mt-2 text-[17px] font-bold
+			@apply  mt-2 mb-2 text-[17px] font-bold
 		}
 		.text-small{
 			@apply text-xs text-start max-w-[500px] lg:text-sm
 		}
 		.line{
 			@apply w-full max-w-[100px] h-[1px] bg-gray-400
+		}
+		.button-custom{
+			@apply w-full bg-transparent block  hover:bg-customViolet text-center text-customViolet hover:text-white border-2 rounded-full py-[8px] font-bold border-customViolet max-w-[200px] lg:text-sm cursor-pointer peer-checked:bg-royalBlue peer-checked:text-white mb-2
+		}
+		.input-radio-container{
+			@apply flex justify-center items-center w-full
 		}
 }

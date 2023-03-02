@@ -54,12 +54,12 @@ function ServiceSelectionHome() {
 	}
 
 	return (
-		<section className="flex flex-col lg:flex-row gap-12">
+		<section className="flex flex-col justify-center items-center text-center lg:flex-row gap-12 lg:items-start">
 			<div className="lg:w-1/3 flex flex-col gap-8 mt-12">
-				<h3 className="text-6xl font-bold ">
+				<h3 className="heading2 mb-1 ">
 					Servicio de {serviceType}
 				</h3>
-				<p className=" text-sm text-gray-7	00">
+				<p className=" ">
 					Nos especializamos en limpiar y organizar meticulosamente su
 					hogar. Incluye tareas como quitar el polvo, aspirar, barrer,
 					trapear, limpiar superficies y limpiar muebles y accesorios.
@@ -75,12 +75,13 @@ function ServiceSelectionHome() {
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<div>
-					<p className="w-full font-medium">
+					<h4 className="clean-title">
 						Selecciona un tipo de limpieza
-					</p>
-					<div className="flex flex-row p-2 justify-center gap-4 ">
-						<div className="basis-1/2">
+					</h4>
+					<div className="clean-container flex-row items-start justify-center ">
+						<div className="w-1/2 flex flex-col justify-center items-center ">
 							<input
+						
 								type="radio"
 								id="simple"
 								className="peer hidden"
@@ -88,21 +89,21 @@ function ServiceSelectionHome() {
 								defaultChecked
 								{...register('depth', {
 									required: 'Campo requerido',
-								})}
+								})} 
 							/>
 							<label
 								htmlFor="simple"
-								className="radio-button-label"
+								className="button-custom"
 							>
 								Simple
 							</label>
-							<p className="text-xs  ">
+							<p className="text-small  ">
 								Tareas esenciales como quitar el polvo, aspirar,
 								barrer y limpiar superficies. Es ideal para
 								mantener un hogar limpio de forma regular.
 							</p>
 						</div>
-						<div className="basis-1/2">
+						<div className="basis-1/2 flex flex-col justify-center items-center ">
 							<input
 								value="profunda"
 								type="radio"
@@ -110,15 +111,15 @@ function ServiceSelectionHome() {
 									required: 'Campo requerido',
 								})}
 								id="profunda"
-								className="peer hidden"
+								className="peer hidden "
 							/>
 							<label
 								htmlFor="profunda"
-								className="radio-button-label"
+								className="button-custom "
 							>
 								Profunda
 							</label>
-							<p className="text-xs  ">
+							<p className="text-small  ">
 								Incluye limpieza adicional de zonas de difícil
 								acceso, como zócalos y estanterías altas, y
 								limpieza más intensiva de baños y cocinas. Es
@@ -128,11 +129,12 @@ function ServiceSelectionHome() {
 							</p>
 						</div>
 					</div>
-				</div>
+				</div >
 				<hr className="" />
-				<div className="flex flex-row p-2 gap-2 justify-center flex-wrap">
+				<div className="clean-container">
 					<p className="w-full">Selecciona el tamaño de tu hogar </p>
-					<div>
+					<div className="clean-container lg:flex-row">
+					<div className='input-radio-container'>
 						<input
 							type="radio"
 							id="pequeño"
@@ -143,11 +145,11 @@ function ServiceSelectionHome() {
 								required: 'Campo requerido',
 							})}
 						/>
-						<label htmlFor="pequeño" className="radio-button-label">
+						<label htmlFor="pequeño" className="button-custom">
 							Pequeño(20 m²)
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="mediano"
 							type="radio"
@@ -157,11 +159,11 @@ function ServiceSelectionHome() {
 							id="mediano"
 							className="peer hidden"
 						/>
-						<label htmlFor="mediano" className="radio-button-label">
+						<label htmlFor="mediano" className="button-custom">
 							Mediano(100 m²)
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="grande"
 							type="radio"
@@ -171,17 +173,20 @@ function ServiceSelectionHome() {
 							id="grande"
 							className="peer hidden"
 						/>
-						<label htmlFor="grande" className="radio-button-label">
+						<label htmlFor="grande" className="button-custom">
 							Grande(150 m²)
 						</label>
 					</div>
+					</div>
+				
 				</div>
 				<hr className="" />
-				<div className="flex flex-row p-2 gap-2 justify-center flex-wrap">
+				<div className="clean-container">
 					<p className="w-full">
 						Selecciona el turno para la limpieza
 					</p>
-					<div>
+							<div className="clean-container lg:flex-row">
+<div className='input-radio-container'>
 						<input
 							type="radio"
 							id="mañana"
@@ -192,11 +197,11 @@ function ServiceSelectionHome() {
 								required: 'Campo requerido',
 							})}
 						/>
-						<label htmlFor="mañana" className="radio-button-label">
+						<label htmlFor="mañana" className="button-custom">
 							Mañana(de 8 a 12 hs)
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="tarde"
 							type="radio"
@@ -207,11 +212,11 @@ function ServiceSelectionHome() {
 							className="peer hidden"
 							defaultChecked
 						/>
-						<label htmlFor="tarde" className="radio-button-label">
+						<label htmlFor="tarde" className="button-custom">
 							Tarde(de 13 a 17 hs)
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="noche"
 							type="radio"
@@ -222,21 +227,24 @@ function ServiceSelectionHome() {
 							className="peer hidden"
 							defaultChecked
 						/>
-						<label htmlFor="noche" className="radio-button-label">
+						<label htmlFor="noche" className="button-custom">
 							Noche(de 18 a 22 hs)
 						</label>
 					</div>
+							</div>
+
+					
 				</div>
 				<hr className="" />
-				<div className="flex flex-row p-2 gap-2 justify-center flex-wrap">
+				<div className="clean-container">
 					<p className="w-full">
 						Selecciona la cantidad de limpiezas
 					</p>
-					<p className="w-full text-xs">
+					<p className=" text-xs">
 						Puedes optar por una limpieza unica o una limpieza
 						programada
 					</p>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							type="radio"
 							id="unica"
@@ -247,11 +255,13 @@ function ServiceSelectionHome() {
 								required: 'Campo requerido',
 							})}
 						/>
-						<label htmlFor="unica" className="radio-button-label">
+						<label htmlFor="unica" className="button-custom">
 							Limpieza única
 						</label>
 					</div>
-					<div>
+					<div className="clean-container lg:flex-row">
+					
+					<div className='input-radio-container'>
 						<input
 							value="2/semana"
 							type="radio"
@@ -263,12 +273,12 @@ function ServiceSelectionHome() {
 						/>
 						<label
 							htmlFor="2/semana"
-							className="radio-button-label"
+							className="button-custom"
 						>
 							2 veces por semana
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="3/semana"
 							type="radio"
@@ -280,12 +290,12 @@ function ServiceSelectionHome() {
 						/>
 						<label
 							htmlFor="3/semana"
-							className="radio-button-label"
+							className="button-custom"
 						>
 							3 veces por semana
 						</label>
 					</div>
-					<div>
+					<div className='input-radio-container'>
 						<input
 							value="diario"
 							type="radio"
@@ -295,10 +305,12 @@ function ServiceSelectionHome() {
 							id="diario"
 							className="peer hidden"
 						/>
-						<label htmlFor="diario" className="radio-button-label">
+						<label htmlFor="diario" className="button-custom">
 							Todos los días
 						</label>
 					</div>
+					</div>
+					
 				</div>
 				{/* <Input
 					error={Boolean(errors.direction)}
@@ -340,7 +352,7 @@ function ServiceSelectionHome() {
 								required: 'Campo requerido',
 							})}
 						/>
-						<label htmlFor="mañana" className="radio-button-label">
+						<label htmlFor="mañana" className="button-custom">
 							Mañana(de 8 a 12 hs)
 						</label>
 					</div>
@@ -355,7 +367,7 @@ function ServiceSelectionHome() {
 							className="peer hidden"
 							defaultChecked
 						/>
-						<label htmlFor="tarde" className="radio-button-label">
+						<label htmlFor="tarde" className="button-custom">
 							Tarde(de 13 a 17 hs)
 						</label>
 					</div>
@@ -370,7 +382,7 @@ function ServiceSelectionHome() {
 							className="peer hidden"
 							defaultChecked
 						/>
-						<label htmlFor="noche" className="radio-button-label">
+						<label htmlFor="noche" className="button-custom">
 							Noche(de 18 a 22 hs)
 						</label>
 					</div>

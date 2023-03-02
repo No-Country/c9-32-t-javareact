@@ -3,8 +3,7 @@ import { ServiceToggleButton } from '@/components/shared/serviceToggleButton';
 import { GlobalContext } from '@/context/GlobalContext';
 import { useState, useContext } from 'react';
 const CleanType = () => {
-
-	const [selected, setSelected] = useState('simple');
+	const [selected, setSelected] = useState('Simple');
 
 	const infoArray = [
 		{
@@ -23,12 +22,15 @@ const CleanType = () => {
 				<div className=" clean-container flex-row ">
 					{infoArray.map((item) => {
 						return (
-							<div className='clean-container w-1/2 self-start '>
-								<ServiceToggleButton
-									text={item.type}
-									customClass=''
-								/>
-								<p className='text-small'>{item.text}</p>
+							<div className="clean-container w-1/2 self-start ">
+								<div
+									onClick={() => setSelected(item.type)}
+									className={`button-custom mb-2 ${selected === item.type && 'bg-customViolet text-white'}`}
+								>
+									{' '}
+									{item.type}{' '}
+								</div>
+								<p className="text-small">{item.text}</p>
 							</div>
 						);
 					})}
