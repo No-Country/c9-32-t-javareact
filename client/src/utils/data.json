@@ -3,28 +3,28 @@
     {
       "id": "63fd5f94b5917e0d2926c724",
       "src": "images/services/home.jpg",
-      "serviceType": "Hogar",
+      "serviceType": "hogar",
       "description": "Limpieza de salas, habitaciones y cocinas.",
       "alt": "home-service-img"
     },
     {
       "id": "63fd5f94b5917e0d2926c725",
       "src": "images/services/office.jpg",
-      "serviceType": "Oficina",
+      "serviceType": "oficina",
       "description": "Limpieza de cubículos y espacios de trabajo.",
       "alt": "home-service-img"
     },
     {
       "id": "63fd5f94b5917e0d2926c726",
       "src": "images/services/construction.jpg",
-      "serviceType": "Construcción",
+      "serviceType": "construcción",
       "description": "Limpieza de escombros y restos de contrucción.",
       "alt": "home-service-img"
     },
     {
       "id": "63fd5f94b5917e0d2926c727",
       "src": "images/services/garden.jpg",
-      "serviceType": "Jardinería",
+      "serviceType": "jardinería",
       "description": "Podado y mantenimiento de tu jardín.",
       "alt": "home-service-img"
     },
@@ -45,8 +45,8 @@
     {
       "id": "63fd5f94b5917e0d2926c72a",
       "src": "images/services/car-inside.jpg",
-      "serviceType": "Automovil",
-      "description": "Limpieza interior y exterior de tu automovil.",
+      "serviceType": "vehiculo",
+      "description": "Limpieza interior y exterior de tu vehiculo.",
       "alt": "home-service-img"
     },
     {

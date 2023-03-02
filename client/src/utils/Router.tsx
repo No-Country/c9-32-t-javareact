@@ -9,6 +9,8 @@ import HomePage from '@/pages/Home';
 import ProfilePage from '@/pages/Profile';
 import OrdersPage from '@/pages/Orders';
 import ServiceSelection from '@/pages/ServiceSelection';
+import ServiceSelectionHogar from '@/pages/ServiceSelectionHogar';
+
 import Payment from '@/pages/Payment/Payment';
 
 function Router() {
@@ -33,6 +35,10 @@ function Router() {
 						<Route
 							path="service-selection/:serviceType"
 							element={<ServiceSelection />}
+						/>
+						<Route
+							path="serviceselection/hogar"
+							element={<ServiceSelectionHogar />}
 						/>
 						<Route path="payment" element={<Payment />} />
 						<Route path="orders" element={<OrdersPage />} />

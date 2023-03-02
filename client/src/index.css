@@ -26,7 +26,8 @@
 @layer components {
 	/* Tailwind */
 	html {
-		@apply bg-gradient bg-no-repeat;
+		@apply   bg-no-repeat;
+		background-image: url(https://i.imgur.com/QjWFxw6.png)
 	}
 	/* SHARED STYLES */
 	.container {

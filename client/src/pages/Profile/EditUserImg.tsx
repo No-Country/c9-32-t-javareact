@@ -50,9 +50,9 @@ function EditUserImg() {
 				className="mx-auto rounded-full w-60 h-60 object-cover mb-5"
 			/>
 
-			<label htmlFor="file-upload" className="custom-file-upload">
-				<Button variant="outlined">Subir Imagen</Button>
-			</label>
+			<Button htmlFor="file-upload" variant="outlined" element="label">
+				Subir Imagen
+			</Button>
 			<input
 				id="file-upload"
 				type="file"
