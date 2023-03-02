@@ -13,9 +13,9 @@ const Payment = () => {
 			<PurchaseDetail />
 			<PayMethod />
 			<BillingInformation />
-			<div className='flex gap-2'>
-				<input className='w-8' type="checkbox" name="" id="" />
-				<p className='text-xs'>
+			<div className="flex gap-2">
+				<input className="w-8" type="checkbox" name="" id="" />
+				<p className="text-xs">
 					Guarda mi información de pago para que sea más facil hacer
 					la compra la próxima vez
 				</p>
@@ -23,17 +23,17 @@ const Payment = () => {
 
 			<Button
 				element={Link}
-				classes="w-full"
+				classes="w-full flex justify-between items-center "
 				to="/checkout"
 				type="submit"
 			>
-				<div className='w-full justify-start items-center flex gap-5 pb-1'>
-			 <span>Confirmar compra</span>	
-				<span className=" ml-2">$16.000 </span>
-				<ArrowRight />
-				</div>
-			
-				
+				<span>Confirmar compra</span>
+				<span className=" ml-2 flex items-center">
+					$16.000
+					<i className="material-icons text-2xl  text-white ml-2">
+						chevron_right
+					</i>
+				</span>
 			</Button>
 		</div>
 	);

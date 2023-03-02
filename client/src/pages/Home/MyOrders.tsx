@@ -4,6 +4,8 @@ import moment from 'moment';
 import { getUserSchedule } from '@api/service-schedule';
 import { useEffect, useState } from 'react';
 import empty from '@assets/empty.png';
+import Button from '@/components/shared/Button';
+import { Link } from 'react-router-dom';
 
 function MyOrders() {
 	const { userData } = useGlobalData();
@@ -24,7 +26,12 @@ function MyOrders() {
 
 	return (
 		<section className="my-12 " id="orders">
-			<h3 className="heading3 ">Mis Pedidos</h3>
+			<div className="flex flex-row justify-between flex-wrap ">
+				<h3 className="heading3 ">Mis Pedidos</h3>
+				<Button element={Link} to="/orders" classes="h-fit">
+					Ver Todos
+				</Button>
+			</div>
 			<div className="mt-10">
 				{orders.length === 0 && (
 					<div className=" ">
@@ -36,7 +43,7 @@ function MyOrders() {
 				)}
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
-					{orders.map((order: any) => (
+					{orders.slice(-4).map((order: any) => (
 						<OrderCard order={order} key={order.id} />
 					))}
 				</div>
@@ -62,10 +69,9 @@ function OrderCard({ order }: any) {
 
 			<div className="h-full ">
 				<p className=" text-sm">{direction}</p>
-
-				<span className="inline-block h-1 w-full rounded bg-yellow-500  " />
-				<p className=" text-xs">Status: {status}</p>
 			</div>
+			<span className="inline-block h-2 w-full rounded bg-yellow-500  " />
+			<p className=" text-xs">Status: {status}</p>
 		</div>
 	);
 }

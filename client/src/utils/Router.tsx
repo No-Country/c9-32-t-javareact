@@ -7,6 +7,7 @@ import LandingPage from '@/pages/Landing';
 import NotFound from '@/pages/NotFound';
 import HomePage from '@/pages/Home';
 import ProfilePage from '@/pages/Profile';
+import OrdersPage from '@/pages/Orders';
 import ServiceSelection from '@/pages/ServiceSelection';
 import Payment from '@/pages/Payment/Payment';
 
@@ -34,6 +35,7 @@ function Router() {
 							element={<ServiceSelection />}
 						/>
 						<Route path="payment" element={<Payment />} />
+						<Route path="orders" element={<OrdersPage />} />
 					</Route>
 
 					<Route path="/admin" element={<UserLayout />}>

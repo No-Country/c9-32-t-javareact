@@ -51,9 +51,7 @@ function EditUserImg() {
 			/>
 
 			<label htmlFor="file-upload" className="custom-file-upload">
-				<Button variant="outlined" classes="w-fit mx-auto">
-					Subir Imagen
-				</Button>
+				<Button variant="outlined">Subir Imagen</Button>
 			</label>
 			<input
 				id="file-upload"
