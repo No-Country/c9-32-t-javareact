@@ -10,6 +10,7 @@ import ProfilePage from '@/pages/Profile';
 import OrdersPage from '@/pages/Orders';
 import ServiceSelection from '@/pages/ServiceSelection';
 import ServiceSelectionHogar from '@/pages/ServiceSelectionHogar';
+import CheckPayment from '@/pages/CheckPayment';
 
 import Payment from '@/pages/Payment/Payment';
 
@@ -41,6 +42,11 @@ function Router() {
 							element={<ServiceSelectionHogar />}
 						/>
 						<Route path="payment" element={<Payment />} />
+
+						<Route
+							path="successPayment"
+							element={<CheckPayment />}
+						/>
 						<Route path="orders" element={<OrdersPage />} />
 					</Route>
 
