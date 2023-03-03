@@ -6,6 +6,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { createUserSchedule } from '@api/service-schedule';
 import servicesData from '@/utils/data.json';
 import { IServiceStorage } from '@/types';
+import { useState } from 'react';
 
 type FormValues = {
 	programDate: string;
@@ -14,12 +15,15 @@ type FormValues = {
 function ServiceSelectionHome() {
 	const navigator = useNavigate();
 	const { userLocation, userData } = useGlobalData();
+	const [cost, setCost] = useState<number>(986);
+
 	const serviceType = 'hogar';
 	const {
 		register,
 		reset,
 		watch,
 		handleSubmit,
+		getValues,
 		formState: { errors, isValid },
 	} = useForm<any>({
 		mode: 'onChange',
@@ -33,7 +37,11 @@ function ServiceSelectionHome() {
 		try {
 			localStorage.setItem(
 				'SERVICE_DATA',
-				JSON.stringify({ options: data, servType: 'hogar' }),
+				JSON.stringify({
+					options: data,
+					servType: 'hogar',
+					cost: cost,
+				}),
 			);
 			navigator('/payment');
 
@@ -54,6 +62,53 @@ function ServiceSelectionHome() {
 		}
 	}
 
+	const calcCost = () => {
+		const constBase = 986;
+		let totalCost = constBase;
+		if (watch('depth') === 'simple') {
+			totalCost += 0;
+		}
+		if (watch('depth') === 'profunda') {
+			totalCost += 246;
+		}
+
+		if (watch('size') === 'pequeño') {
+			totalCost += 0;
+		}
+		if (watch('size') === 'mediano') {
+			totalCost += 443;
+		}
+		if (watch('size') === 'grande') {
+			totalCost += 739;
+		}
+
+		if (watch('workday') === 'mañana') {
+			totalCost += 0;
+		}
+		if (watch('workday') === 'tarde') {
+			totalCost += 0;
+		}
+		if (watch('workday') === 'noche') {
+			totalCost += 147;
+		}
+
+		if (watch('period') === 'unica') {
+			totalCost += 0;
+		}
+		if (watch('period') === '2/semana') {
+			totalCost += 1972;
+		}
+		if (watch('period') === '3/semana') {
+			totalCost += 2958;
+		}
+		if (watch('period') === 'diario') {
+			totalCost += 5916;
+		}
+		setCost(totalCost);
+
+		console.log(watch('workday'));
+	};
+
 	return (
 		<section className="flex flex-col justify-center items-center text-center lg:flex-row gap-12 lg:items-start">
 			<div className="lg:w-1/3 flex flex-col gap-8 mt-12">
@@ -70,6 +125,12 @@ function ServiceSelectionHome() {
 					src={`/${serviceLocal?.src}`}
 					alt={serviceType}
 				/>
+				<span className="font-black text-2xl flex items-center text-royalBlue">
+					${' '}
+					<span className="text-lg font-medium  ml-2 text-black mt-1">
+						{cost}
+					</span>
+				</span>
 			</div>
 			<form
 				className="flex flex-col gap-4 w-full lg:w-1/2 mx-auto lg:mt-12 mb-6"
@@ -89,6 +150,7 @@ function ServiceSelectionHome() {
 								defaultChecked
 								{...register('depth', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 							/>
 							<label htmlFor="simple" className="button-custom">
@@ -106,6 +168,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('depth', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="profunda"
 								className="peer hidden "
@@ -140,6 +203,7 @@ function ServiceSelectionHome() {
 								defaultChecked
 								{...register('size', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 							/>
 							<label htmlFor="pequeño" className="button-custom">
@@ -152,6 +216,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('size', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="mediano"
 								className="peer hidden"
@@ -166,6 +231,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('size', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="grande"
 								className="peer hidden"
@@ -191,6 +257,7 @@ function ServiceSelectionHome() {
 								defaultChecked
 								{...register('workday', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 							/>
 							<label htmlFor="mañana" className="button-custom">
@@ -203,10 +270,10 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('workday', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="tarde"
 								className="peer hidden"
-								defaultChecked
 							/>
 							<label htmlFor="tarde" className="button-custom">
 								Tarde(de 13 a 17 hs)
@@ -218,10 +285,10 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('workday', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="noche"
 								className="peer hidden"
-								defaultChecked
 							/>
 							<label htmlFor="noche" className="button-custom">
 								Noche(de 18 a 22 hs)
@@ -253,7 +320,7 @@ function ServiceSelectionHome() {
 							Limpieza única
 						</label>
 					</div>
-					<div className='text-xs'>
+					<div className="text-xs">
 						o
 						<hr />
 						Limpieza programada
@@ -266,6 +333,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('period', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="2/semana"
 								className="peer hidden"
@@ -280,6 +348,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('period', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="3/semana"
 								className="peer hidden"
@@ -294,6 +363,7 @@ function ServiceSelectionHome() {
 								type="radio"
 								{...register('period', {
 									required: 'Campo requerido',
+									onChange: calcCost,
 								})}
 								id="diario"
 								className="peer hidden"
@@ -382,7 +452,8 @@ function ServiceSelectionHome() {
 
 				<hr />
 				<Button className="  w-fit" type="submit">
-					Continua con la compra
+					Continua con la compra{' '}
+					<span className="ml-2 text-xs">${cost}</span>
 				</Button>
 			</form>
 		</section>

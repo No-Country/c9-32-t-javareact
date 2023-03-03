@@ -56,7 +56,6 @@ export interface GlobalContextType {
 	setUserLocation: React.Dispatch<React.SetStateAction<string>>;
 	servTypes: object[];
 	fetchServTypes: () => void;
-	
 }
 export interface Options {
 	depth: string;
@@ -68,4 +67,5 @@ export interface Options {
 export interface IServiceStorage {
 	options: Options;
 	servType: string;
+	cost: number;
 }

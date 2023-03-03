@@ -71,7 +71,7 @@ const Summary = () => {
 				<span className="opacity-60 text-customViolet">
 					Total a pagar
 				</span>
-				<span>$16.000</span>
+				<span>${data?.cost}</span>
 			</div>
 		</div>
 	);

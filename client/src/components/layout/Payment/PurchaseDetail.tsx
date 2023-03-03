@@ -21,6 +21,8 @@ const PurchaseDetail = () => {
 	const [error, setError] = useState<onError>({ error: false, message: '' });
 	const [paymendType, setPaymendType] = useState('MP');
 	const navigator = useNavigate();
+	const cost =
+		JSON.parse(localStorage.getItem('SERVICE_DATA') || '')?.cost || 0;
 
 	const {
 		register,
@@ -141,7 +143,7 @@ const PurchaseDetail = () => {
 							onClick={() => setPaymendType('Efectivo')}
 						/>
 						<label htmlFor="unica" className="button-custom">
-							En Efectivo
+							Efectivo
 						</label>
 						<span className="ml-2 text-sm mb-2">
 							Paga en efectivo el día de limpieza
@@ -158,7 +160,7 @@ const PurchaseDetail = () => {
 					>
 						<span>Confirmar compra</span>
 						<span className=" ml-2 flex items-center">
-							$16.000
+							${cost}
 							<i className="material-icons text-2xl  text-white ml-2">
 								chevron_right
 							</i>
