@@ -91,6 +91,54 @@ function ServiceSelectionOficina() {
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<div className="clean-container">
+					<p className="w-full">Selecciona la cantidad de oficinas </p>
+					<div className="clean-container lg:flex-row">
+						<div className="input-radio-container">
+							<input
+								type="radio"
+								id="1"
+								className="peer hidden"
+								value="pequeño"
+								defaultChecked
+								{...register('rooms', {
+									required: 'Campo requerido',
+								})}
+							/>
+							<label htmlFor="pequeño" className="button-custom">
+								1 a 3
+							</label>
+						</div>
+						<div className="input-radio-container">
+							<input
+								value="4"
+								type="radio"
+								{...register('rooms', {
+									required: 'Campo requerido',
+								})}
+								id="4"
+								className="peer hidden"
+							/>
+							<label htmlFor="4" className="button-custom">
+								4 a 10
+							</label>
+						</div>
+						<div className="input-radio-container">
+							<input
+								value="10"
+								type="radio"
+								{...register('rooms', {
+									required: 'Campo requerido',
+								})}
+								id="10"
+								className="peer hidden"
+							/>
+							<label htmlFor="10" className="button-custom">
+								Mas de 10
+							</label>
+						</div>
+					</div>
+				</div>
+				<div className="clean-container">
 					<p className="w-full">Selecciona el tamaño de oficina </p>
 					<div className="clean-container lg:flex-row">
 						<div className="input-radio-container">

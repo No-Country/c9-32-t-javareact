@@ -22,9 +22,9 @@ function Orders() {
 	}, [userData]);
 	return (
 		<section>
-			<h3 className="heading3 ">Mis Pedidos</h3>
+			<h3 className="heading3 my-6">Mis Pedidos</h3>
 			<div className="flex flex-col gap-3">
-				{orders.slice(-4).map((order: any) => (
+				{orders.map((order: any) => (
 					<OrderCard order={order} key={order.id} />
 				))}
 			</div>
@@ -40,7 +40,7 @@ function OrderCard({ order }: any) {
 		<div className="p-2  border-royalBlue border-dashed border-[1px] rounded-lg  flex flex-col gap-2 bg-white">
 			<div className="flex flex-wrap justify-between items-center  gap-4">
 				<span className="flex-grow text-sm font-semibold">
-					{service?.type || 'Servicio'}
+					Servicio de {service?.type || 'Limpieza'}
 					<span className="ml-2 bg-yellow-500 text-white text-xs p-1 rounded-full">
 						{status}
 					</span>

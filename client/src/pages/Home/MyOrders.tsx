@@ -59,7 +59,7 @@ function OrderCard({ order }: any) {
 	return (
 		<div className="p-5  border-royalBlue border-dashed border-[1px] rounded-2xl  flex flex-col gap-4 bg-white">
 			<div className="flex flex-wrap justify-between items-center  gap-4">
-				<span className="flex-grow text-sm">
+				<span className="flex-grow text-sm capitalize font-semibold ">
 					{service?.type || 'Servicio'}
 				</span>
 				<span className="text-gray-500 text-xs">
