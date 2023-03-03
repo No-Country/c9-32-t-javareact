@@ -58,4 +58,14 @@ export interface GlobalContextType {
 	fetchServTypes: () => void;
 	
 }
+export interface Options {
+	depth: string;
+	size: string;
+	workday: string;
+	period: string;
+}
 
+export interface IServiceStorage {
+	options: Options;
+	servType: string;
+}

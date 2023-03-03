@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { createUserSchedule } from '@api/service-schedule';
 import servicesData from '@/utils/data.json';
+import { IServiceStorage } from '@/types';
 
 type FormValues = {
 	programDate: string;
@@ -27,7 +28,7 @@ function ServiceSelectionHome() {
 		(service) => service.serviceType === serviceType,
 	);
 
-	async function onSubmit(data: any) {
+	async function onSubmit(data: IServiceStorage) {
 		console.log(data);
 		try {
 			localStorage.setItem(
