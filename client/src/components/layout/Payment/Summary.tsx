@@ -69,7 +69,7 @@ const Summary = () => {
 			</div>
 			<div className="flex flex-col  w-full  p-3">
 				<span className="opacity-60 text-customViolet">
-					Total a pagar - Servicio mensual
+					Total a pagar
 				</span>
 				<span>$16.000</span>
 			</div>

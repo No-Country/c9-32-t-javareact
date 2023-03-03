@@ -47,7 +47,7 @@ function ServiceCard({ serviceData }: any) {
 			/>
 
 			<div className="p-3 ">
-				<h4 className="  ">{type}</h4>
+				<h4 className=" capitalize ">{type}</h4>
 				<p className="text-xs text-gray-500 group-hover:text-white  ">
 					{desc}
 				</p>

@@ -5,7 +5,7 @@ const Footer = () => {
 		<footer className="footer">
 			<div>
 				<h2 className="font-roboto font-bold text-2xl tracking-wide max-w-xs">
-					DustBusters - LLevando la limpieza a su puerta
+					DustBusters - Llevando la limpieza a su puerta
 				</h2>
 				
 			</div>

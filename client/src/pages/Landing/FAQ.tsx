@@ -31,7 +31,7 @@ function FAQ() {
 				<h2 className="heading2">Preguntas frecuentes</h2>
 				<p className="hidden lg:block p-2">
 					¿Sigues con dudas?
-					<span className="underline font-bold">
+					<span className="underline font-bold ml-2">
 						Envíanos un email
 					</span>
 				</p>
