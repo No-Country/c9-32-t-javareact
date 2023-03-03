@@ -11,6 +11,8 @@ import OrdersPage from '@/pages/Orders';
 import ServiceSelection from '@/pages/ServiceSelection';
 import ServiceSelectionHogar from '@/pages/ServiceSelectionHogar';
 import CheckPayment from '@/pages/CheckPayment';
+import ServiceSelectionOficina from '@/pages/ServiceSelectionOficina';
+import ServiceSelectionVehiculo from '@/pages/ServiceSelectionVehiculo';
 
 import Payment from '@/pages/Payment/Payment';
 
@@ -41,6 +43,15 @@ function Router() {
 							path="serviceselection/hogar"
 							element={<ServiceSelectionHogar />}
 						/>
+						<Route
+							path="serviceselection/vehiculo"
+							element={<ServiceSelectionVehiculo />}
+						/>
+						<Route
+							path="serviceselection/oficina"
+							element={<ServiceSelectionOficina />}
+						/>
+
 						<Route path="payment" element={<Payment />} />
 
 						<Route
