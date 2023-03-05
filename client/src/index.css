@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* css/Sass    */
+	html {
+		scroll-behavior: smooth;
+	}
+	li {
+		list-style-type: none;
+	}
+
+	#root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		overflow-x: hidden !important;
+	}
+}
+
+@layer components {
+	/* Tailwind */
+	html {
+		@apply   bg-no-repeat;
+		background-image: url(https://i.imgur.com/QjWFxw6.png)
+	}
+	/* SHARED STYLES */
+	.container {
+		@apply w-11/12 max-w-7xl mx-auto;
+	}
+	#root {
+		@apply font-roboto;
+	}
+	.heading2 {
+		@apply sm:text-4xl text-3xl font-bold;
+	}
+	.heading3 {
+		@apply sm:text-3xl text-2xl font-bold pb-3;
+	}
+	.button {
+		@apply text-sm uppercase rounded-full text-center cursor-pointer  px-8 py-2 pt-3 hover:scale-95 duration-100 font-semibold;
+	}
+	.radio-button-label {
+		@apply block cursor-pointer select-none rounded-full p-2 text-center border-2 border-royalBlue peer-checked:bg-royalBlue peer-checked:text-white;
+	}
+	.center-absolute {
+		@apply absolute left-[50%] right-[50%] -translate-x-[50%];
+	}
+	.text {
+		@apply text-gray-300 font-[300] leading-[27px];
+	}
+	
+	/* HEADER */
+
+	nav {
+		height: 3.5rem;
+	}
+
+	.nav-container {
+		@apply fixed top-0 left-0 bottom-0 w-full h-full z-[100]  md:relative  bg-royalBlue md:bg-transparent;
+	}
+
+	.nav-list_container {
+		@apply container  w-full h-full  md:h-[68px] flex items-center flex-col justify-center gap-20  md:flex-row   lg:pr-10 md:gap-5 lg:gap-10 md:justify-between;
+	}
+
+	.nav-list {
+		@apply w-full flex flex-col justify-start  items-center gap-20 text-white  md:text-black text-[16px] uppercase md:normal-case  md:flex-row md:h-auto md:gap-5  lg:gap-8    xl:gap-10;
+	}
+
+	.nav_link-item {
+		@apply block hover:scale-95 text-base  transition-all  delay-100  duration-200 font-medium;
+	}
+
+	.toggleButton {
+		@apply z-[101] absolute outline-none border-none select-none top-4 right-4 text-white  md:hidden;
+	}
+
+	/* SERVICES */
+	.service-container {
+		@apply rounded-xl flex flex-col mx-2 justify-center items-start overflow-hidden border-gray-400 border-[1px]  text-start;
+	}
+
+	.service-subcontainer {
+		@apply px-4 py-3;
+	}
+	.service-title {
+		@apply font-bold;
+	}
+	.service-img {
+		@apply w-full;
+	}
+	
+
+	/* FOOTER */
+
+	.footer {
+		@apply bg-customViolet text-center pb-10 text-white mt-10 pt-5 flex flex-col items-center justify-center gap-5 sm:h-60 sm:flex-row sm:items-start sm:gap-20 sm:pt-12;
+	}
+
+	.footer__nav-title {
+		@apply text-lg font-semibold;
+	}
+
+	/* FORMS */
+
+	/* register */
+
+	.form {
+		@apply w-full   max-w-2xl mx-auto mt-5 md:mt-10 flex flex-col items-center justify-center gap-5 mb-5;
+	}
+	.input-container {
+		@apply w-full flex flex-col relative z-0 border px-3 py-2 border-black rounded-sm;
+	}
+	.input {
+		@apply w-full bg-transparent  font-bold  text-[14px]  mt-2    outline-none;
+	}
+
+	.label {
+		@apply absolute z-10  tracking-widest  text-[12px] font-bold -top-3 transition-all duration-300;
+	}
+	.label-translate {
+		@apply -translate-y-5;
+	}
+	.label-error {
+		@apply absolute left-0 text-red-500   text-[10px] -bottom-4;
+	}
+	.submit {
+		@apply rounded-full w-full  text-[18px]  tracking-[1px]  bg-customViolet px-5 py-2  text-white  duration-300 font-[500] hover:opacity-90;
+	}
+	.terms-bold {
+		@apply font-bold;
+	}
+
+
+
+	/* PAYMENT */
+	.payment-label{
+		@apply opacity-60 text-customViolet
+	}
+
+
+	/* Loader */
+	.lds-dual-ring {
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+	  }
+	  .lds-dual-ring:after {
+		content: " ";
+		display: block;
+		width: 50px;
+		height: 50px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6px solid #2463EB;
+		border-color: #2463EB transparent #2463EB transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	  }
+	  @keyframes lds-dual-ring {
+		0% {
+		  transform: rotate(0deg);
+		}
+		100% {
+		  transform: rotate(360deg);
+		}
+	  }
+
+
+
+
+		/* CLEAN SERVICE */
+		.clean-container{
+			@apply w-full flex flex-col justify-center items-center text-center gap-3 
+		}
+		.clean-title{
+			@apply  mt-2 mb-2 text-[17px] font-bold
+		}
+		.text-small{
+			@apply text-xs text-start max-w-[500px] lg:text-sm
+		}
+		.line{
+			@apply w-full max-w-[100px] h-[1px] bg-gray-400
+		}
+		.button-custom{
+			@apply w-full bg-transparent block  hover:bg-customViolet text-center text-customViolet hover:text-white border-2 rounded-full py-[8px] font-bold border-customViolet max-w-[200px] lg:text-sm cursor-pointer peer-checked:bg-royalBlue peer-checked:text-white mb-2
+		}
+		.input-radio-container{
+			@apply flex justify-center items-center w-full
+		}
+}

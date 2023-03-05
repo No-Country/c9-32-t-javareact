@@ -1,0 +1,60 @@
+{
+  "services": [
+    {
+      "id": "63fd5f94b5917e0d2926c724",
+      "src": "images/services/home.jpg",
+      "serviceType": "hogar",
+      "description": "Limpieza de salas, habitaciones y cocinas.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c725",
+      "src": "images/services/office.jpg",
+      "serviceType": "oficina",
+      "description": "Limpieza de cubículos y espacios de trabajo.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c726",
+      "src": "images/services/construction.jpg",
+      "serviceType": "construcción",
+      "description": "Limpieza de escombros y restos de contrucción.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c727",
+      "src": "images/services/garden.jpg",
+      "serviceType": "jardinería",
+      "description": "Podado y mantenimiento de tu jardín.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c728",
+      "src": "images/services/carpet.jpg",
+      "serviceType": "Alfombras",
+      "description": "Limpieza exhaustiva de alfombras.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c729",
+      "src": "images/services/windows.jpg",
+      "serviceType": "Ventanas",
+      "description": "Limpieza interior y exterior de ventanas.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c72a",
+      "src": "images/services/car-inside.jpg",
+      "serviceType": "vehiculo",
+      "description": "Limpieza interior y exterior de tu vehiculo.",
+      "alt": "home-service-img"
+    },
+    {
+      "id": "63fd5f94b5917e0d2926c72b",
+      "src": "images/services/home.jpg",
+      "serviceType": "Telas",
+      "description": "Limpieza de telas, asientos y muebles y pieles .",
+      "alt": "home-service-img"
+    }
+  ]
+}
