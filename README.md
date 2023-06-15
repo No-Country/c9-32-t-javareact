@@ -44,7 +44,7 @@ Una plataforma de servicio de limpieza es una solución digital que permite a lo
 
 ### Frontend
 
-| <img src="https://media.licdn.com/dms/image/C4E03AQFoclIC5puq_g/profile-displayphoto-shrink_400_400/0/1646591218431?e=1680739200&v=beta&t=cdFIT_3Z2w5KiPlYFss_IhQl4zh0MwJ0juTiT6Przws" width=50>| <img src="https://avatars.githubusercontent.com/u/84111811?v=4" width=50>| 
+| <img src="https://github.com/No-Country/c9-32-t-javareact/assets/35477201/6bc06849-68b5-4fcf-b510-12d5fa431aec" width=50>| <img src="https://avatars.githubusercontent.com/u/84111811?v=4" width=50>| 
 :-:|:-:|
 | **Antonio Ayola**  | **Fausto Savoya** | 
 | <a href="https://github.com/Tono2007"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/antonio-ayola"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/FaustoSav"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/faustosavoya/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
